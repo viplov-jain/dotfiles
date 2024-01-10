@@ -1,0 +1,93 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: JetBrains Mono;
+    font-style: normal;
+    min-height: 0;
+    background-blend-mode: darken;
+}
+
+window#waybar {
+    background: rgba(50, 50, 80, 0.5);
+    border-bottom: 1px solid #313030;
+    color: #f4d9e1
+}
+
+#temperature,
+#cava,
+#cpu,
+#window,
+#custom-power,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#workspaces,
+#memory,
+#privacy,
+#taskbar {
+    padding: 0px 5px;
+}
+
+#custom-power {
+    font-size: 1.2rem;
+    min-width: 0px;
+    /* margin: auto; */
+}
+
+tooltip {
+    background: #000000;
+    border-radius: 10px;
+    border-width: 0px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+.modules-left,
+.modules-center, 
+.modules-right {
+    background: rgb(59, 57, 57);
+    opacity: 1.0;
+    /* margin: 0px 0px;
+    margin-top: 0px; */
+    border: 1px solid #181825;
+    border: 4px;
+    min-width: 20px;
+    padding: 0px 10px;
+}
+
+.modules-left {
+    border-radius: 0px 20px 20px 0px;
+}
+
+.modules-center {
+    border-radius: 20px 20px 20px 20px;
+}
+
+.modules-right {
+    border-radius: 20px 0px 0px 20px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#temperature.critical,
+#battery.critical:not(.charging) {
+    background-color: #F53C3C;
+    color: #EEEEEE;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+@import "colors.css";
+@import "taskbar.css";
+@import "workspaces.css";

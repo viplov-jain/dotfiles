@@ -1,0 +1,56 @@
+(defvar focused_monitor 0)
+
+(defwindow
+  widgetbox0
+  :monitor 0
+  :geometry (geometry :x "0%" :y "0%" :width "0" :height "0" :anchor "center")
+  :stacking "fg"
+  :exclusive false
+  (widgetbox)
+)
+
+(defwindow
+  widgetbox1
+  :monitor 1
+  :geometry (geometry :x "0%" :y "0%" :width "0" :height "0" :anchor "center")
+  :stacking "fg"
+  :exclusive false
+  :style "background-color: red;"
+  (widgetbox)
+)
+
+
+(defwidget widgetbox []
+  (box :orientation "h" :space-evenly false
+    (box :orientation "v" :space-evently false
+      (box :orientation "h" :space-evenly false
+        (box :style "margin: 4px;" :width 200 :height 300 (userinfo))
+        (box :style "margin: 4px;" :width 400 :height 300 (time))
+        (box :style "margin: 4px;" :width 400 :height 300 (weather))
+      )
+      (box :orientation "h" :space-evenly false
+        (box :style "margin: 4px;" :width 400 :height 300 (stocks))
+        (box :style "margin: 4px;" :width 600 :height 300 (spotify))
+      )
+      (box :orientation "h" :space-evenly false
+        (box :style "margin: 4px;" :width 300 :height 300 (usage))
+        (box :width 700 :height 300 (shortcuts))
+      )
+    )
+    (box :orientation "v" :width 200 :height 900 (controls))
+    ; (box :orientation "v" :space-evenly false
+    ;   ; (box :style "margin: 4px;" :width 600 :height 100 (label :text "todo"))
+    ;   (box :style "margin: 4px;" :width 600 :height 800 (sysstats))
+    ; )
+  )
+)
+
+(include "userinfo.yuck")
+(include "stocks.yuck")
+(include "time.yuck")
+(include "weather.yuck")
+(include "spotify.yuck")
+(include "usage.yuck")
+(include "shortcuts.yuck")
+(include "controls.yuck")
+; (include "sysstats.yuck")

@@ -1,0 +1,25 @@
+* {
+    all: unset;
+    font-family: JetBrains Mono;
+    color: white;
+    border-radius: 10px;
+}
+
+tooltip {
+    background-color: black;
+}
+
+contents trough {
+    background-color: grey; 
+    highlight {background-color: white;}
+}
+
+.spotifybutton image {
+    margin: 8px;
+    -gtk-icon-effect: dim;
+}
+
+.spotifybutton:hover image {
+    -gtk-icon-effect: none;
+    -gtk-icon-transform: scale(1.05);
+}

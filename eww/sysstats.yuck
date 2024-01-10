@@ -1,0 +1,101 @@
+(deflisten SYSSTATS :initial "[]" `scripts/sysstats.py`)
+
+(defwidget cpustat [data]
+  (box :orientation "h" :space-evenly false :spacing 20
+    (label :valign "center"
+      :style "color: rgb(${2*data.usage}, ${200-2*data.usage}, 0);"
+      :text "${data.core}(${data.usage}%):"
+    )
+    (box
+      :style "background-image: linear-gradient(black, rgb(12, 25, 66));"
+      (graph :valign "center" :width 150 :height 50
+        :line-style "round"
+        :style "background-image: linear-gradient(red, green);color: green;"
+        :time-range "1m"
+        :value "${data.usage}"
+      ))
+  )
+)
+
+(defwidget cpustats []
+  (box :orientation "h"
+    :halign "center"
+    :spacing 40
+    (box :orientation "v"
+      (cpustat :data {EWW_CPU.cores[0]})
+      (cpustat :data {EWW_CPU.cores[1]})
+      (cpustat :data {EWW_CPU.cores[2]})
+      (cpustat :data {EWW_CPU.cores[3]})
+    )
+    (box :orientation "v"
+      (cpustat :data {EWW_CPU.cores[4]})
+      (cpustat :data {EWW_CPU.cores[5]})
+      (cpustat :data {EWW_CPU.cores[6]})
+      (cpustat :data {EWW_CPU.cores[7]})
+    )
+  )
+)
+
+(defwidget netstats_row [value]
+  (box :orientation "h" :space-evenly false :spacing 20
+    (label :valign "center"
+      :width 80
+      :text {
+      value > 1048576
+      ? "${round(value/1048576, 1)}MB/s"
+      : (value > 1024 ? "${round(value/1024, 1)}MB/s" : "${value}B/s")
+      }
+    )
+    (box
+      :style "background-image: linear-gradient(black, rgb(12, 25, 66));"
+      (graph :valign "center" :width 440 :height 44
+        :line-style "round"
+        :time-range "1m"
+        :value "${value}"
+      ))
+  )
+)
+
+(defwidget netstats []
+  (box :orientation "v"
+    :style "margin-left: 8px;"
+    (netstats_row :value {EWW_NET.nordlynx.NET_UP})
+    (netstats_row :value {EWW_NET.nordlynx.NET_DOWN})
+  )
+)
+
+(defwidget top-processes-row [data]
+  (box :orientation "h"
+    (label :text {data[0]})
+    (label :text {data[1]})
+    (label :text {data[2]})
+    (label :text {data[3]})
+  )
+)
+
+(defwidget top-processes []
+  (box :orientation "v"
+    (top-processes-row :data {["Process", "Threads", "Mem", "CPU"]})
+    (top-processes-row :data {SYSSTATS[0]})
+    (top-processes-row :data {SYSSTATS[1]})
+    (top-processes-row :data {SYSSTATS[2]})
+    (top-processes-row :data {SYSSTATS[3]})
+    (top-processes-row :data {SYSSTATS[4]})
+    (top-processes-row :data {SYSSTATS[5]})
+    (top-processes-row :data {SYSSTATS[6]})
+    (top-processes-row :data {SYSSTATS[7]})
+  )
+)
+
+(defwidget neofetch []
+  (box (label :text "TODO"))
+)
+
+(defwidget sysstats []
+  (box :orientation "v"
+    :style "background-image: linear-gradient(black, rgb(12, 25, 66));"
+    (cpustats)
+    (netstats)
+    (box :orientation "h" (top-processes) (neofetch))
+  )
+)

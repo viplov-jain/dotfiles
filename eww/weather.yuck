@@ -1,0 +1,45 @@
+; weather.sh:
+; curl 'https://api.weatherapi.com/v1/forecast.json?key={api key}&q={location}&days=1&aqi=no&alerts=no' | jq '.current.condition.icon = "https:" + .current.condition.icon'
+(defpoll WEATHER :interval "1h" `$HOME/.weather.sh | scripts/weather.py`)
+
+(defwidget weather_c [c]
+  (box :orientation "v" 
+    :space-evenly false
+    (label :text "${formattime(WEATHER.forecast_h[c].time, '%H')}:00")
+    (image :path "${WEATHER.forecast_h[c].icon}" :image-width 38 :image-height 38)
+    (label :text "${WEATHER.forecast_h[c].temp} C")
+  )
+)
+
+(defwidget weather []
+  (box :orientation "v" :space-evenly false
+    :style "background-image: linear-gradient(black, rgb(0, 14, 75));"
+    (box :orientation "h"
+      :style "margin-top: 24px;"
+      (box :orientation "v"
+        :space-evenly false
+        :valign "center"
+        (label :style "font-size: 1.2rem; margin-top: 16px;" :text "${WEATHER.location}")
+        (label :style "font-size: 3rem; margin-top: 4px;" :text "${WEATHER.current.temp} C")
+      )
+      (box :orientation "v"
+        :space-evenly false
+        :valign "center"
+        (image :path "${WEATHER.current.icon}" :image-width 72 :image-height 72)
+        (label :limit-width 20 :text "${WEATHER.current.condition}")
+      )
+    )
+    (box :orientation "h"
+      :style "margin-top: 36px;" 
+      (weather_c :c 0)
+      (weather_c :c 1)
+      (weather_c :c 2)
+      (weather_c :c 3)
+      (weather_c :c 4)
+      (weather_c :c 5)
+    )
+  )
+)
+
+; (label :text "${WEATHER.current.temp_c} C '${WEATHER.current.condition.text}'")
+; (box :style "background-image: url('${WEATHER.current.condition.icon}');")

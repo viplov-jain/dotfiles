@@ -1,0 +1,22 @@
+#workplaces button {
+    border: 1px solid black;
+}
+
+#workspaces button {
+    color: #726d60;
+}
+
+#workspaces button.active {
+    color: #f5f4f2;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    background: #aa2e2e;
+    border-radius: 15px;
+}
+
+#workspaces button:hover {
+    background: rgb(40, 40, 40);
+    border-radius: 15px;
+}

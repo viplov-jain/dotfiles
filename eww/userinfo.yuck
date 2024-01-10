@@ -1,0 +1,20 @@
+
+(defpoll USERNAME :interval "1h" `whoami`)
+
+(defwidget userinfo []
+    (box :orientation "v" :space-evenly false
+        :style "background-image: linear-gradient(rgb(0, 198, 255), rgb(23, 23, 80));"
+        (image :path "images/user-image.svg" 
+            :image-width 150 :image-height 150
+            :style "margin: 20px;"
+        )
+        (label 
+            :text {USERNAME} 
+            :style "font-size: 2rem;"
+        )
+        (label 
+            :text "Viplov Jain"
+            :style "margin-top: 12px; font-size: 1.2rem;"
+        )
+    )
+)

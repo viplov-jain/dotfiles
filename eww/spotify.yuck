@@ -1,0 +1,65 @@
+;; {title, artist, status, length, url}
+(deflisten MUSIC :initial "{}" `playerctl metadata -p spotify -F -f '{"title": "{{title}}", "artist": "{{artist}}", "album": "{{album}}", "status": "{{status}}", "length": "{{mpris:length}}", "url": "{{mpris:artUrl}}"}'`)
+(defpoll POSITION :interval "1s" :initial 0 `playerctl position -p spotify`)
+(defpoll POSITION_STR :interval "1s" :initial 0 `playerctl position -p spotify | awk '{printf "%02d:%02d",int($1/60),int($1)%60}'`)
+
+(deflisten COVER :initial "" `playerctl -p spotify -F metadata mpris:artUrl | scripts/getimg.sh cover`)
+
+
+(defwidget spotify []
+  (box :orientation "v" :halign "fill" :class "spotify"
+    :style "background-image: linear-gradient(black, rgb(16, 26, 16));"
+    (box :orientation "h" :space-evenly false
+      (box :orientation "v" :space-evenly false
+        (image :path "${COVER}"
+          :image-width 220 :image-height 220
+          :style "margin: 20px 20px 10px 20px;"
+        )
+        (label :text "${MUSIC.album}" :tooltip "${MUSIC.album}"
+          :limit-width 24
+          :style "font-size: 1rem; color: rgb(180, 180, 180);"
+        )
+      )
+      (box :orientation "v"
+        :space-evenly false :xalign 1
+        :style "margin-bottom: 40px;"
+        (label :text "${MUSIC.title}" :tooltip "${MUSIC.title}"
+          :limit-width 15
+          :style "margin: 28px 0px 12px 0px; font-size: 2rem;"
+        )
+        (label :text "${MUSIC.artist}" :tooltip "${MUSIC.artist}"
+          :limit-width 36
+          :style "margin-bottom: 28px;"
+        )
+        (box :orientation "h"
+          :style "margin-bottom: 28px;"
+          (eventbox :class "spotifybutton"
+            :onclick `playerctl -p spotify previous`
+            (image :image-width 50 :image-length 50
+            :path "images/music/prev.svg")
+          )
+          (eventbox :class "spotifybutton"
+            :onclick "playerctl -p spotify play-pause"
+            (image :image-width 60 :image-length 60
+            :path "images/music/${MUSIC.status == 'Paused' ? 'play' : 'pause'}.svg")
+          )
+          (eventbox :class "spotifybutton"
+            :onclick `playerctl -p spotify next`
+            (image :image-width 50 :image-length 50
+            :path "images/music/next.svg")
+          )
+        )
+        (box :orientation "h" :space-evenly false
+          (scale
+            :width 260
+            :css "contents trough {margin-right: 12px; min-height: 6px;}"
+            :min 0 :max {MUSIC.length / 1000000}
+            :value {POSITION}
+            :onchange "playerctl -p spotify position {}"
+          )
+          (label :text "${POSITION_STR}")
+        )
+      )
+    )
+  )
+)

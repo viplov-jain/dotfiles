@@ -1,0 +1,32 @@
+(defpoll META :interval "1h" :initial "" `scripts/stocks.py meta`)
+(defpoll AMZN :interval "1h" :initial "" `scripts/stocks.py amzn`)
+(defpoll MSFT :interval "1h" :initial "" `scripts/stocks.py msft`)
+
+(defwidget stock_r [data desc]
+  (box :orientation "h"
+    (box :orientation "v" :space-evenly false
+      :valign "center"
+      :style "margin-left: 16px;"
+      (label :halign "start" :style "font-size: 1.6rem;" :text "${data.meta.symbol}")
+      (label :halign "start" :style "font-size: 0.8rem; color: rgb(180, 180, 180);" :text "${desc}")
+    )
+    (box :orientation "v" :space-evenly false
+      :valign "center"
+      :style "margin-right: 16px;"
+      (label :halign "end" :style "font-size: 1.6rem;" :text "${data.meta.regularMarketPrice}")
+      (label :halign "end" :style "font-size: 1.2rem;" 
+        :style "color: ${data.did_increase ? 'rgb(0, 255, 0)' : 'rgb(255, 0, 0)'};"
+        :text "${data.did_increase ? '+' : ''}${round(data.meta.regularMarketPrice - data.meta.chartPreviousClose, 2)}"
+      )
+    )
+  )
+)
+
+(defwidget stocks []
+  (box :orientation "v" :space-evenly true
+    :style "background-image: linear-gradient(black, rgb(0, 14, 75));"
+    (stock_r :data "${META}" :desc "Meta Platform, Inc.")
+    (stock_r :data "${AMZN}" :desc "Amazon.com, Inc.")
+    (stock_r :data "${MSFT}" :desc "Microsoft Corporation")
+  )
+)

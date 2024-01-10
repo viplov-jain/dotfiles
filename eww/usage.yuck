@@ -1,0 +1,37 @@
+
+(defwidget usage-scale [value v]
+  (scale
+    :halign "center"
+    :css  "
+    contents trough {
+      min-width: 12px; 
+      background-color: grey; 
+      highlight {background-color: rgb(${255 * sin(degtorad(90)*v)}, ${255 * cos(degtorad(90)*v)}, 0);}
+    }
+    "
+    :height 210 :flipped true :orientation "v" 
+    :value {value}
+  )
+)
+
+(defwidget usage_bar [scale label value ?flip]
+  (box :orientation "v" :space-evenly false :halign "center"
+  (label :style "margin: 10px;" :halign "center" :text {round(value, 1)})
+  (usage-scale 
+    :v {flip != "" ? 1 - (value*scale) / 100 : (value*scale) / 100}
+    :value {value*scale}
+  )
+  (label :style "margin: 10px;" :halign "center" :text {label})
+  )
+)
+
+(defwidget usage []
+  (box :orientation "h" 
+    :style "background-image: linear-gradient(0deg, black, rgb(8, 8, 100));"
+    (usage_bar :scale 1 :value {EWW_BATTERY.BAT0.capacity} :label "BAT0" :flip true)
+    (usage_bar :scale 1 :value {EWW_BATTERY.BAT1.capacity} :label "BAT1" :flip true)
+    (usage_bar :scale 1 :value {EWW_RAM.used_mem_perc} :label "Mem")
+    (usage_bar :scale 1 :value {EWW_DISK["/"].used_perc} :label "Disk")
+    (usage_bar :scale 1.25 :value {jq(EWW_TEMPS, '[.[] | select (. != \"null\")] | max')} :label "T")
+  )
+)
