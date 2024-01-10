@@ -17,5 +17,5 @@ Also add them to Gnome desktop interface
 
 ## Gallery
 
-[Waybar and neofetch](images/im1.bmp)
-[Widgets](images/im2.bmp)
+<img src="images/im1.bmp">
+<img src="images/im2.bmp">
