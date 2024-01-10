@@ -11,6 +11,7 @@
 - **Fonts** - Jetbrains Mono
 - **Font Symbols** - Nerd Font
 - **Icons** - Papirus
+- **Sound controls** - playerctl, pulsemixer
 
 Packages: ttf-jetbraiins-mono ttf-nerd-fonts-symbols papirus-icon-theme
 Also add them to Gnome desktop interface
