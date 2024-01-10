@@ -37,7 +37,7 @@
         (box :width 700 :height 300 (shortcuts))
       )
     )
-    (box :orientation "v" :width 200 :height 900 (controls))
+    ; (box :orientation "v" :width 200 :height 900 (controls))
     ; (box :orientation "v" :space-evenly false
     ;   ; (box :style "margin: 4px;" :width 600 :height 100 (label :text "todo"))
     ;   (box :style "margin: 4px;" :width 600 :height 800 (sysstats))

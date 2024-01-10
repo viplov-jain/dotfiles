@@ -20,5 +20,5 @@ print(json.dumps({
     'location': data['location']['name'],
     'current': get_data(data['current']),
     'forecast': data['forecast']['forecastday'][0]['day'],
-    'forecast_h': [get_data(h) for h in data['forecast']['forecastday'][0]['hour'] if h['time_epoch'] > time.time()]
+    'forecast_h': [get_data(h) for h in data['forecast']['forecastday'][0]['hour'] + data['forecast']['forecastday'][1]['hour'] if h['time_epoch'] > time.time()]
 }))

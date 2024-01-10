@@ -14,3 +14,8 @@
 
 Packages: ttf-jetbraiins-mono ttf-nerd-fonts-symbols papirus-icon-theme
 Also add them to Gnome desktop interface
+
+## Gallery
+
+[Waybar and neofetch](images/im1.bmp)
+[Widgets](images/im2.bmp)
