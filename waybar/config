@@ -20,7 +20,9 @@
         "pulseaudio",
         // "pulseaudio#microphone",
         // "privacy",
-        "clock"
+        "clock",
+        "temperature",
+        "cpu"
     ],
     "custom/power": {
         "on-click": "swaylock",
@@ -190,6 +192,25 @@
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
+    },
+    "temperature": {
+        "thermal-zone": 0,
+        "critical-threshold": 80,
+        "format": "CPU:  {temperatureC}°C"
+    },
+    "cpu": {
+        "interval": 1,
+        "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+        "format-icons": [
+            "<span color='#1aff00'>▁</span>",
+            "<span color='#76ff00'>▂</span>",
+            "<span color='#c6ff00'>▃</span>",
+            "<span color='#edff00'>▄</span>",
+            "<span color='#fffe00'>▅</span>",
+            "<span color='#ff9f00'>▆</span>",
+            "<span color='#ff7500'>▇</span>",
+            "<span color='#ff0000'>█</span>"
+        ]
     },
     "privacy": {
         "icon-spacing": 4,

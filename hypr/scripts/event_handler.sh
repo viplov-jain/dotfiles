@@ -11,7 +11,8 @@ handle_focusedmon() {
 handle() {
   case $1 in
     focusedmon*) handle_focusedmon "${1#focusedmon>>*}" ;;
-    monitoradded*) sleep 1; "$HOME/.config/eww/scripts/monitoradded.sh" ;;
+    monitoradded*) killall waybar && waybar& ;;
+    monitorremoved*) killall waybar && waybar& ;;
   esac
 }
 
