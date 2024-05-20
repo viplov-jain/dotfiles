@@ -11,7 +11,7 @@
         "wlr/taskbar"
     ],
     "modules-center": [
-        "cava"
+        "cava" 
     ],
     "modules-right": [
         "network",
@@ -48,7 +48,7 @@
             "class<code-oss>": ""
         },
         "show-special": true,
-        "persistent_workspaces": {
+        "persistent-workspaces": {
             "*": 0
         }
     },
@@ -93,7 +93,7 @@
         "format-disabled": "󰂲",
         "format-connected": " {num_connections}",
         "tooltip-format-connected": "(Connected to: {device_enumerate}) {device_alias}: {device_address_type} {device_address}",
-        "format-connected-battery": "",
+        "format-connected-battery": " {device_battery_percentage}%",
         "tooltip-format-connected-battery": "{device_alias} {device_battery_percentage}%",
         "tooltip-format-enumerate-connected": "{device_alias}"
     },

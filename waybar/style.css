@@ -30,6 +30,14 @@ window#waybar {
     padding: 0px 5px;
 }
 
+#cpu {
+  min-width: 115px;
+}
+
+#network {
+  min-width: 12px;
+}
+
 #custom-power {
     font-size: 1.2rem;
     min-width: 0px;
