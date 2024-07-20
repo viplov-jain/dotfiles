@@ -39,7 +39,7 @@
       (shortcut-dir :dir "~" :overlay "empty") ; Filesystem
       (shortcut-button :onclick "vlc&" :color "rgb(82, 61, 38)":icon "vlc.svg") ; VLC
       (shortcut-button :onclick "xdg-open https://design.penpot.app/" :color "rgb(84, 104, 148)":icon "penpot.svg") ; Penpot
-      (shortcut-button :onclick "kitty -e yay" :color "black":icon "update.svg") ; Update
+      (shortcut-button :onclick "killall waybar; waybar&" :color "black":icon "update.svg") ; Update
       (shortcut-button :onclick "chromium&" :color "rgb(30, 59, 132)":icon "chromium.svg") ; Chromium
       (shortcut-button :onclick "xdg-open http://reddit.com" :color "rgb(255, 87, 0)":icon "reddit.svg") ; Reddit
     )
