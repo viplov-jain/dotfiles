@@ -1,5 +1,5 @@
 return {
-    {
+	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
 			require("lualine").setup({
@@ -7,9 +7,13 @@ return {
 					icons_enabled = true,
 					-- theme = 'dracula',
 				},
-				-- this part shows full path, helps navigate in Oil.
 				sections = {
-					lualine_c = { { "filename", path = 2 } },
+					lualine_a = { "mode" },
+					lualine_b = { "branch", "diff", "diagnostics" },
+					lualine_c = { { "filename", path = 1 } },
+					lualine_x = { "encoding", "fileformat", "filetype" },
+					lualine_y = { "vim.lsp.buf_get_clients()[1].name" },
+					lualine_z = { "progress", "location" },
 				},
 			})
 		end,
