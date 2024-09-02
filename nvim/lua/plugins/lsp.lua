@@ -37,8 +37,4 @@ return {
 		-- Foramtter
 		"sbdchd/neoformat",
 	},
-	{
-		-- Rust LSP tools
-		"mrcjkb/rustaceanvim",
-	},
 }

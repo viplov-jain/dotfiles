@@ -13,6 +13,7 @@ capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp"
 local servers = {
 	clangd = {},
 	pylsp = {},
+  rust_analyzer = {},
 
 	lua_ls = {
 		-- cmd = {...},
