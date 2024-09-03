@@ -1,5 +1,6 @@
 -- Global Settings
 vim.g.mapleader = " " -- Setting the leader key
+vim.g.maplocalleader = " "
 
 -- Terminal and Title Settings
 vim.opt.title = true
@@ -11,6 +12,9 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.smarttab = true
 vim.opt.tabstop = 2
+
+-- Font
+vim.g.have_nerd_font = true
 
 -- Display Settings
 vim.opt.cursorline = true
