@@ -46,3 +46,7 @@ remap("<leader>sf", telescope.find_files, "Search file")
 remap("<leader>sg", telescope.live_grep, "Search grep")
 remap("<leader>sb", telescope.buffers, "Search buffers")
 remap("<leader>sh", telescope.help_tags, "Search help")
+
+-- Debugger
+remap("<leader>db", "<Cmd> DapToggleBreakpoint <CR>", "Toggle breakpoint at line")
+remap("<leader>dr", "<cmd> DapContinue <CR>", "Start or continue the debugger")
