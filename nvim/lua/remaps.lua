@@ -10,11 +10,10 @@ local mapping = {
 	{ "p", "p==", desc = "Paste" },
 
 	-- Control key
-	{ "<C-s>", "<C-o><Cmd>w<CR>", desc = "Save file", mode = niv },
-	{ "<C-n>", "<C-o><Cmd>Neotree toggle<CR>", desc = "Toggle neotree", mode = niv },
-	{ "<C-f>", "<C-o><Cmd>Neoformat<CR>", desc = "Autoformat", mode = niv },
-	{ "<C-o>", "<C-o><Cmd>Oil<CR>", desc = "File explorer", mode = niv },
-	{ "<C-z>", "<C-o><Cmd>ZenMode<CR>", desc = "Toggle Zen Mode", mode = niv },
+	{ "<C-s>", "<Cmd>w<CR>", desc = "Save file", mode = niv },
+	{ "<C-n>", "<Cmd>Neotree toggle<CR>", desc = "Toggle [N]eotree", mode = niv },
+	{ "<C-f>", "<Cmd>lua require('conform').format({ async = true })<CR>", desc = "[F]ormat buffer", mode = niv },
+	{ "<C-z>", "<Cmd>ZenMode<CR>", desc = "Toggle Zen Mode", mode = niv },
 
 	-- Alt key
 	-- Move lines
@@ -23,10 +22,10 @@ local mapping = {
 	{ "<A-j>", ":m '>+1<CR>gv=gv", desc = "Move selected lines down", mode = "v" },
 	{ "<A-j>", ":m .+1<cr>==", desc = "Move selected lines down" },
 	-- Bufferline controls
-	{ "<A-t>", "<Esc><Cmd>enew<CR>", desc = "New buffer", mode = niv },
-	{ "<A-Tab>", "<Esc><Cmd>bnext<CR>", desc = "Next buffer", mode = niv },
-	{ "<A-S-Tab>", "<Esc><Cmd>bprevious<CR>", desc = "Previous buffer", mode = niv },
-	{ "<A-q>", "<Esc><Cmd>bd<CR>", desc = "Close buffer", mode = niv },
+	{ "<A-t>", "<Cmd>enew<CR>", desc = "New buffer", mode = niv },
+	{ "<A-Tab>", "<Cmd>bnext<CR>", desc = "Next buffer", mode = niv },
+	{ "<A-S-Tab>", "<Cmd>bprevious<CR>", desc = "Previous buffer", mode = niv },
+	{ "<A-q>", "<Cmd>bd<CR>", desc = "Close buffer", mode = niv },
 
 	-- Indent/Unindent with Tab/Shift+Tab
 	{ "<Tab>", ">>", desc = "Indent", mode = { "n", "v" } },
@@ -34,6 +33,8 @@ local mapping = {
 
 	-- Comment toggle
 	{ "?", "<Cmd>CommentToggle<CR>", desc = "Comment Toggle", mode = { "n", "v" } },
+
+	{ "<leader>o", "<Cmd>Oil<CR>", desc = "File explorer", mode = niv },
 
 	-- ░█▀▀░█▀▄░█▀█░█░█░█▀█░█▀▀
 	-- ░█░█░█▀▄░█░█░█░█░█▀▀░▀▀█
