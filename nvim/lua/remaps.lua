@@ -10,10 +10,11 @@ local mapping = {
 	{ "p", "p==", desc = "Paste" },
 
 	-- Control key
-	{ "<C-s>", "<Esc><Cmd>w<CR>", desc = "Save file", mode = niv },
-	{ "<C-n>", "<Esc><Cmd>Neotree toggle<CR>", desc = "Toggle neotree", mode = niv },
-	{ "<C-f>", "<Esc><Cmd>Neoformat<CR>", desc = "Autoformat", mode = niv },
-	{ "<C-o>", "<Esc><Cmd>Oil<CR>", desc = "File explorer", mode = niv },
+	{ "<C-s>", "<C-o><Cmd>w<CR>", desc = "Save file", mode = niv },
+	{ "<C-n>", "<C-o><Cmd>Neotree toggle<CR>", desc = "Toggle neotree", mode = niv },
+	{ "<C-f>", "<C-o><Cmd>Neoformat<CR>", desc = "Autoformat", mode = niv },
+	{ "<C-o>", "<C-o><Cmd>Oil<CR>", desc = "File explorer", mode = niv },
+	{ "<C-z>", "<C-o><Cmd>ZenMode<CR>", desc = "Toggle Zen Mode", mode = niv },
 
 	-- Alt key
 	-- Move lines
@@ -38,9 +39,10 @@ local mapping = {
 	-- ░█░█░█▀▄░█░█░█░█░█▀▀░▀▀█
 	-- ░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀░░░▀▀▀
 
-	{ "<leader>s", group = "[S]earch" },
-	{ "<leader>d", group = "[D]ebugger" },
-	{ "t", group = "[T]erminal" },
+	{ "<leader>s", group = "[S]earch", icon = "" },
+	{ "<leader>d", group = "[D]ebugger", icon = "" },
+	{ "<leader>t", group = "[T]rouble", icon = "" },
+	{ "t", group = "[T]erminal", icon = "" },
 
 	-- Search
 	{ "<leader>sf", telescope.find_files, desc = "Search file" },
@@ -55,6 +57,18 @@ local mapping = {
 	-- Terminal
 	{ "tg", "<Cmd> lua _LAZYGIT_TOGGLE() <CR>", desc = "Toggle lazygit" },
 	{ "tb", "<Cmd> lua _BTOP_TOGGLE() <CR>", desc = "Toggle btop" },
+
+	-- Trouble
+	{ "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+	{ "<leader>tT", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
+	{ "<leader>ts", "<cmd>Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)" },
+	{
+		"<leader>tl",
+		"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+		desc = "LSP Definitions / references / ... (Trouble)",
+	},
+	{ "<leader>tL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
+	{ "<leader>tQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
 }
 
 require("which-key").add(mapping)
