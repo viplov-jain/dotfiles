@@ -26,19 +26,19 @@ remap("<S-Tab>", "<<", "Unindent", { "n", "v" })
 remap("?", ":CommentToggle<CR>", "Comment Toggle", { "n", "v" })
 
 -- Tab controls
-remap("<leader>bt", ":enew<CR>", "New buffer")
-remap("<leader>bn", "<Cmd>bnext<CR>", "Next buffer")
-remap("<leader>bp", "<Cmd>bprevious<CR>", "Previous buffer")
-remap("<leader>bq", "<Cmd>bd<CR>", "Close buffer")
+remap("<A-t>", "<Cmd>enew<CR>", "New buffer")
+remap("<A-Tab>", "<Cmd>bnext<CR>", "Next buffer")
+remap("<A-S-Tab>", "<Cmd>bprevious<CR>", "Previous buffer")
+remap("<A-q>", "<Cmd>bd<CR>", "Close buffer")
 
 -- Autoformat
-remap("<leader>f", ":Neoformat<CR>", "Autoformat")
+remap("<leader>f", "<Cmd>Neoformat<CR>", "Autoformat")
 
 -- Directory tree sidebar toggle
-remap("<C-n>", ":Neotree toggle<CR>", "Toggle neotree")
+remap("<C-n>", "<Cmd>Neotree toggle<CR>", "Toggle neotree")
 
 -- Filesystem explorer
-remap("<leader>o", ":Oil<CR>", "Show filesystem")
+remap("<leader>o", "<Cmd>Oil<CR>", "Show filesystem")
 
 -- Fuzzy search
 local telescope = require("telescope.builtin")
@@ -49,4 +49,8 @@ remap("<leader>sh", telescope.help_tags, "Search help")
 
 -- Debugger
 remap("<leader>db", "<Cmd> DapToggleBreakpoint <CR>", "Toggle breakpoint at line")
-remap("<leader>dr", "<cmd> DapContinue <CR>", "Start or continue the debugger")
+remap("<leader>dr", "<Cmd> DapContinue <CR>", "Start or continue the debugger")
+
+-- Terminal
+remap("tg", "<Cmd> lua _LAZYGIT_TOGGLE() <CR>", "Toggle lazygit")
+remap("tb", "<Cmd> lua _BTOP_TOGGLE() <CR>", "Toggle btop")
