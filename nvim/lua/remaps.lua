@@ -34,7 +34,7 @@ local mapping = {
 	-- Comment toggle
 	{ "?", "<Cmd>CommentToggle<CR>", desc = "Comment Toggle", mode = { "n", "v" } },
 
-	{ "<leader>o", "<Cmd>Oil<CR>", desc = "File explorer", mode = niv },
+	{ "<leader>oo", "<Cmd>Oil<CR>", desc = "File explorer" },
 
 	-- ░█▀▀░█▀▄░█▀█░█░█░█▀█░█▀▀
 	-- ░█░█░█▀▄░█░█░█░█░█▀▀░▀▀█
