@@ -68,11 +68,6 @@ return {
           enforce_regular_tabs = false,
           always_show_bufferline = true,
           auto_toggle_bufferline = true,
-          hover = {
-            enabled = true,
-            delay = 200,
-            reveal = { 'close' },
-          },
           sort_by = 'insert_after_current',
         },
       }
