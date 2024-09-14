@@ -12,24 +12,6 @@ capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp'
 --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 local servers = {
   clangd = {},
-  pylsp = {
-    settings = {
-      pylsp = {
-        plugins = {
-          flake8 = {
-            enabled = true,
-            maxLineLength = 120,
-          },
-          mypy = {
-            enabled = true,
-          },
-          pyflakes = {
-            enabled = false,
-          },
-        },
-      },
-    },
-  },
   rust_analyzer = {},
 
   lua_ls = {
@@ -59,5 +41,30 @@ require('mason-lspconfig').setup {
       server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
       require('lspconfig')[server_name].setup(server)
     end,
+  },
+}
+
+-- Configure pylsp outside of mason
+require('lspconfig').pylsp.setup {
+  settings = {
+    pylsp = {
+      plugins = {
+        -- formatter options
+        black = { enabled = true },
+        autopep8 = { enabled = false },
+        yapf = { enabled = false },
+        -- linter options
+        flake8 = { enabled = true },
+        pylint = { enabled = false },
+        pyflakes = { enabled = false },
+        pycodestyle = { enabled = false },
+        -- type checker
+        pylsp_mypy = { enabled = true },
+        -- auto-completion options
+        jedi_completion = { fuzzy = true },
+        -- import sorting
+        pyls_isort = { enabled = true },
+      },
+    },
   },
 }
