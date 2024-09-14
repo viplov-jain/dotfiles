@@ -1,34 +1,28 @@
 return {
 	{
 		-- Foramtter
-		"stevearc/conform.nvim",
-		event = { "BufWritePre" },
-		cmd = { "ConformInfo" },
-		opts = {
-			notify_on_error = false,
-			format_on_save = function(bufnr)
-				-- Disable "format_on_save lsp_fallback" for languages that don't
-				-- have a well standardized coding style. You can add additional
-				-- languages here or re-enable it for the disabled ones.
-				local disable_filetypes = {}
-				local lsp_format_opt
-				if disable_filetypes[vim.bo[bufnr].filetype] then
-					lsp_format_opt = "never"
-				else
-					lsp_format_opt = "fallback"
-				end
-				return {
-					timeout_ms = 500,
-					lsp_format = lsp_format_opt,
-				}
-			end,
-			formatters_by_ft = {
-				cpp = { "clang-format" },
-				lua = { "stylua" },
-				python = { "isort", "black" },
-				rust = { "rustfmt" },
-				javascript = { "prettier" },
-			},
-		},
+		"mhartington/formatter.nvim",
+    version = "*",
+    cmd = { "Format", "FormatWrite" },
+    config = function ()
+      vim.api.nvim_create_augroup("__formatter__", { clear = true })
+      vim.api.nvim_create_autocmd("BufWritePost", {
+	      group = "__formatter__",
+	      command = ":FormatWrite",
+      })
+      
+      require("formatter").setup({
+        logging = true,
+			  -- Set the log level
+			  log_level = vim.log.levels.ERROR,
+        filetype = {
+          lua = {require("formatter.filetypes.lua").stylua,},
+          cpp = {require("formatter.filetypes.lua").clangformat,},
+          javascript = {require("formatter.filetypes.javascript").prettier,},
+          python = {require("formatter.filetypes.python").black,},
+          rust = {require("formatter.filetypes.rust").rustfmt},
+        }
+      })
+    end
 	},
 }

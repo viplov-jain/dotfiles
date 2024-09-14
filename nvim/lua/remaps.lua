@@ -11,8 +11,8 @@ local mapping = {
 
 	-- Control key
 	{ "<C-s>", "<Cmd>w<CR>", desc = "Save file", mode = niv },
-	{ "<C-n>", "<Cmd>Neotree toggle<CR>", desc = "Toggle [N]eotree", mode = niv },
-	{ "<C-f>", "<Cmd>lua require('conform').format({ async = true })<CR>", desc = "[F]ormat buffer", mode = niv },
+	{ "<C-n>", "<Cmd>NvimTreeToggle<CR>", desc = "Toggle [N]eotree", mode = niv },
+	{ "<C-f>", "<Cmd>Format<CR>", desc = "[F]ormat buffer", mode = niv },
 	{ "<C-z>", "<Cmd>ZenMode<CR>", desc = "Toggle Zen Mode", mode = niv },
 
 	-- Alt key
@@ -22,10 +22,10 @@ local mapping = {
 	{ "<A-j>", ":m '>+1<CR>gv=gv", desc = "Move selected lines down", mode = "v" },
 	{ "<A-j>", ":m .+1<cr>==", desc = "Move selected lines down" },
 	-- Bufferline controls
-	{ "<A-t>", "<Cmd>enew<CR>", desc = "New buffer", mode = niv },
-	{ "<A-Tab>", "<Cmd>bnext<CR>", desc = "Next buffer", mode = niv },
-	{ "<A-S-Tab>", "<Cmd>bprevious<CR>", desc = "Previous buffer", mode = niv },
-	{ "<A-q>", "<Cmd>bd<CR>", desc = "Close buffer", mode = niv },
+	{ "<C-t>", "<Cmd>enew<CR>", desc = "New buffer", mode = niv },
+	{ "<C-k>", "<Cmd>bnext<CR>", desc = "Next buffer", mode = niv },
+	{ "<C-j>", "<Cmd>bprevious<CR>", desc = "Previous buffer", mode = niv },
+	{ "<c-q>", "<Cmd>bd<CR>", desc = "Close buffer", mode = niv },
 
 	-- Indent/Unindent with Tab/Shift+Tab
 	{ "<Tab>", ">>", desc = "Indent", mode = { "n", "v" } },

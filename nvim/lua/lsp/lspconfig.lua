@@ -12,8 +12,25 @@ capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp"
 --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 local servers = {
 	clangd = {},
-	pylsp = {},
-  rust_analyzer = {},
+	pylsp = {
+		settings = {
+			pylsp = {
+				plugins = {
+					flake8 = {
+						enabled = true,
+						maxLineLength = 120,
+					},
+					mypy = {
+						enabled = true,
+					},
+					pyflakes = {
+						enabled = false,
+					},
+				},
+			},
+		},
+	},
+	rust_analyzer = {},
 
 	lua_ls = {
 		-- cmd = {...},
