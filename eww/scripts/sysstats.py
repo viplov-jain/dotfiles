@@ -1,5 +1,3 @@
-#!/bin/python3
-
 import psutil, json
 from operator import itemgetter
 from time import sleep, time

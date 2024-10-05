@@ -1,5 +1,3 @@
-#!/bin/python3
-
 import json, time
 
 data = json.loads(input())
@@ -16,9 +14,13 @@ def get_data(condition):
         'time': condition.get('time_epoch')
     }
 
+forecast_data = []
+for d in data['forecast']['forecastday']:
+    forecast_data += d['hour']
+
 print(json.dumps({
     'location': data['location']['name'],
     'current': get_data(data['current']),
     'forecast': data['forecast']['forecastday'][0]['day'],
-    'forecast_h': [get_data(h) for h in data['forecast']['forecastday'][0]['hour'] + data['forecast']['forecastday'][1]['hour'] if h['time_epoch'] > time.time()]
+    'forecast_h': [get_data(h) for h in forecast_data if h['time_epoch'] > time.time()]
 }))

@@ -1,5 +1,3 @@
-#!/bin/python3
-
 import json, requests, argparse
 
 def get_request(stock):
