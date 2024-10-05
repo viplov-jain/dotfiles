@@ -1,6 +1,6 @@
-(defpoll META :interval "1h" :initial "" `scripts/stocks.py meta`)
-(defpoll AMZN :interval "1h" :initial "" `scripts/stocks.py amzn`)
-(defpoll MSFT :interval "1h" :initial "" `scripts/stocks.py msft`)
+(defpoll META :interval "1h" :initial "" `python scripts/stocks.py meta`)
+(defpoll AMZN :interval "1h" :initial "" `python scripts/stocks.py amzn`)
+(defpoll MSFT :interval "1h" :initial "" `python scripts/stocks.py msft`)
 
 (defwidget stock_r [data desc]
   (box :orientation "h"
