@@ -10,6 +10,9 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
+    # Hardware
+    playerctl
+
     # Editors
     vim
     neovim
@@ -24,7 +27,7 @@
     # Console
     kitty
     
-    # File manager
+    # File explorer
     xfce.thunar 
     
     # Hyprland
@@ -46,8 +49,12 @@
     jq
     btop
     neofetch
+    gh # GitHub
+    ripgrep
 
-
+    # Music
+    youtube-music
+    
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -57,6 +64,8 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
+
+    ".gitconfig".source = ./gitconfig;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''

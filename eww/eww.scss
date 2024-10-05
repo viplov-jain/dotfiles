@@ -14,12 +14,12 @@ contents trough {
     highlight {background-color: white;}
 }
 
-.spotifybutton image {
+.musicbutton image {
     margin: 8px;
     -gtk-icon-effect: dim;
 }
 
-.spotifybutton:hover image {
+.musicbutton:hover image {
     -gtk-icon-effect: none;
     -gtk-icon-transform: scale(1.05);
 }

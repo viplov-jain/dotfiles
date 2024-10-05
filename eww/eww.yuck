@@ -30,7 +30,7 @@
       )
       (box :orientation "h" :space-evenly false
         (box :style "margin: 4px;" :width 400 :height 300 (stocks))
-        (box :style "margin: 4px;" :width 600 :height 300 (spotify))
+        (box :style "margin: 4px;" :width 600 :height 300 (music))
       )
       (box :orientation "h" :space-evenly false
         (box :style "margin: 4px;" :width 300 :height 300 (usage))
@@ -49,7 +49,7 @@
 (include "stocks.yuck")
 (include "time.yuck")
 (include "weather.yuck")
-(include "spotify.yuck")
+(include "music.yuck")
 (include "usage.yuck")
 (include "shortcuts.yuck")
 (include "controls.yuck")
