@@ -10,6 +10,11 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
+    
+    # Base
+    gcc
+    libgcc
+    clang-tools
     (python3.withPackages(ps: with ps; [ pip requests ]))
 
     # Hardware
@@ -70,7 +75,7 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
 
-    ".gitconfig".source = ./gitconfig;
+    ".gitconfig".source = ./.gitconfig;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
