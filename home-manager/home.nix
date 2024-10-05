@@ -49,11 +49,14 @@
     jq
     btop
     neofetch
-    gh # GitHub
     ripgrep
 
     # Music
     youtube-music
+
+    # Source control
+    gh
+    delta
     
   ];
 
