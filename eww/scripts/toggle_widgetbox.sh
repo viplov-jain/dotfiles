@@ -1,7 +1,7 @@
 #!/bin/sh
 
 toggle() {
-    if [[ $(eww windows | grep $1) == "*"* ]]; then
+    if eww state | grep USERNAME; then
         eww close $1
     else 
         eww open $1
