@@ -16,6 +16,8 @@
     libgcc
     clang-tools
     (python3.withPackages(ps: with ps; [ pip requests ]))
+    xdg-utils
+    socat
 
     # Hardware
     playerctl
@@ -76,12 +78,17 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     ".gitconfig".source = ./.gitconfig;
+    ".zsh"
 
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    ".config/hypr".source = ./hypr;
+    ".config/nvim".source = ./nvim;
+    ".config/eww".source = ./eww;
+    ".config/waybar".source = ./waybar;
+    ".config/kitty".source = ./kitty;
+    ".config/dunst".source = ./dunst;
+    ".config/starship".source = ./starship;
+    ".config/neofetch".source = ./neofetch;
+    ".config/btop".source = ./btop;
   };
 
   # Home Manager can also manage your environment variables through
