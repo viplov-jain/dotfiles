@@ -20,9 +20,11 @@
     rustup
     nodejs_22
 
+    # Utils
     xdg-utils
     socat
-
+    killall
+    
     # Hardware
     playerctl
 
