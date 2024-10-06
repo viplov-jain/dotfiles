@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-    background: rgba(50, 50, 80, 0.5);
+    background: rgba(25, 25, 40, 0.5);
     border-bottom: 1px solid #313030;
     color: #f4d9e1
 }
@@ -55,7 +55,7 @@ tooltip {
 .modules-left,
 .modules-center, 
 .modules-right {
-    background: rgb(59, 57, 57);
+    background: rgb(8, 10, 10);
     opacity: 1.0;
     /* margin: 0px 0px;
     margin-top: 0px; */

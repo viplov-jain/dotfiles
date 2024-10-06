@@ -24,13 +24,19 @@
     xdg-utils
     socat
     killall
-    
+    fzf
+    yazi-unwrapped
+    zip
+    unzip
+    gzip
+    gnutar
+
     # Hardware
     playerctl
 
     # Editors
     vim
-    neovim
+    neovim-unwrapped
 
     # Fonts
     (nerdfonts.override { fonts = [ "Hack" "FiraCode" "DroidSansMono" ]; })
@@ -66,14 +72,21 @@
     neofetch
     ripgrep
 
-    # Music
+    # Media
     youtube-music
+    vlc
 
     # Source control
     gh
     git
     delta
     lazygit
+
+
+    # Nvim Plugin dependencies
+    stylua
+    lua-language-server
+    clang-tools
     
   ];
 

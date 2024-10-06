@@ -9,7 +9,7 @@
 ## Requirements
 - Install NixOS
 - Enable Hyprland
-- Add home-manager in pkgs
+- Add home-manager in pkgs and enable Pipewire
 - clone dotfiles and ln -s ~/dotfiles ~/.config/home-manager
 - home-manager switch
 

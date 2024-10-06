@@ -31,6 +31,7 @@ local servers = {
 }
 
 require('mason').setup()
+-- require('mason-tool-installer').setup { ensure_installed = vim.tbl_keys(servers) }
 require('mason-lspconfig').setup {
   handlers = {
     function(server_name)
@@ -41,30 +42,5 @@ require('mason-lspconfig').setup {
       server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
       require('lspconfig')[server_name].setup(server)
     end,
-  },
-}
-
--- Configure pylsp outside of mason
-require('lspconfig').pylsp.setup {
-  settings = {
-    pylsp = {
-      plugins = {
-        -- formatter options
-        black = { enabled = true },
-        autopep8 = { enabled = false },
-        yapf = { enabled = false },
-        -- linter options
-        flake8 = { enabled = true },
-        pylint = { enabled = false },
-        pyflakes = { enabled = false },
-        pycodestyle = { enabled = false },
-        -- type checker
-        pylsp_mypy = { enabled = true },
-        -- auto-completion options
-        jedi_completion = { fuzzy = true },
-        -- import sorting
-        pyls_isort = { enabled = true },
-      },
-    },
   },
 }
