@@ -74,7 +74,7 @@
         "actions": {
             "on-click-right": "mode"
         },
-        "on-click": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+        "on-click": "playerctl -p chromium play-pause" 
     },
     "network": {
         "format": "ifname",
