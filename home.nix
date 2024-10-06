@@ -31,6 +31,8 @@
     # Editors
     vim
     neovim-unwrapped
+    ## Language servers
+    lua-language-server
 
     # Fonts
     (nerdfonts.override { fonts = [ "Hack" "FiraCode" "DroidSansMono" ]; })
