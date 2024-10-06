@@ -11,11 +11,15 @@
 
   home.packages = with pkgs; [
     
-    # Base
+    # Dev
     gcc
     libgcc
     clang-tools
     (python3.withPackages(ps: with ps; [ pip requests ]))
+    gnumake
+    rustup
+    nodejs_22
+
     xdg-utils
     socat
 
@@ -65,7 +69,9 @@
 
     # Source control
     gh
+    git
     delta
+    lazygit
     
   ];
 
@@ -78,7 +84,7 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     ".gitconfig".source = ./.gitconfig;
-    ".zsh"
+    ".zshrc".source = ./.zshrc;
 
     ".config/hypr".source = ./hypr;
     ".config/nvim".source = ./nvim;
