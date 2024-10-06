@@ -17,20 +17,20 @@
     clang-tools
     (python3.withPackages(ps: with ps; [ pip requests ]))
     gnumake
-    rustup
-    nodejs_22
 
     # Utils
-    xdg-utils
-    socat
-    killall
+    xdg-utils       # Desktop env utils
+    socat           # Process communication
+    killall         # Kill processes
+    fzf             # Fuzzy finder
+    yazi-unwrapped  # File explorer
     
     # Hardware
     playerctl
 
     # Editors
     vim
-    neovim
+    neovim-unwrapped
 
     # Fonts
     (nerdfonts.override { fonts = [ "Hack" "FiraCode" "DroidSansMono" ]; })
