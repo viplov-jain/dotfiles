@@ -85,6 +85,7 @@
     stylua
     lua-language-server
     clang-tools
+    pyright
     
   ];
 
