@@ -30,8 +30,6 @@
     unzip
     gzip
     gnutar
-
-    # Hardware
     playerctl
 
     # Editors
@@ -107,7 +105,7 @@
     ".config/waybar".source = ./waybar;
     ".config/kitty".source = ./kitty;
     ".config/dunst".source = ./dunst;
-    ".config/starship".source = ./starship;
+    ".config/starship.toml".source = ./starship/config.toml;
     ".config/neofetch".source = ./neofetch;
     ".config/btop".source = ./btop;
   };
