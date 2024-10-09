@@ -35,7 +35,7 @@
     )
   
     (box :orientation "h" :halign "fill"
-      (shortcut-button :onclick "youtube-music&" :color "rgb(19, 37, 26)" :icon "music.svg") ; Spotify
+      (shortcut-button :onclick "youtube-music&" :color "rgb(19, 37, 26)" :icon "music.svg") ; YT Music
       (shortcut-dir :dir "~" :overlay "empty") ; Filesystem
       (shortcut-button :onclick "vlc&" :color "rgb(82, 61, 38)":icon "vlc.svg") ; VLC
       (shortcut-button :onclick "obsidian &" :color "black" :icon "obsidian.png") ; Penpot
