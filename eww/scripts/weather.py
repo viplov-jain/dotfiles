@@ -1,5 +1,4 @@
 import json, time, requests, os
-from urllib import parse
 
 with open(os.path.expanduser("~/.secrets.json")) as f:
     data = json.load(f)
@@ -12,7 +11,7 @@ params = {
     "alerts": "no",
 }
 data = requests.get(
-    "https://api.weatherapi.com/v1/forecast.json?" + parse.urlencode(params)
+    "https://api.weatherapi.com/v1/forecast.json?", params=params
 ).json()
 
 
