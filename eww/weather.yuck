@@ -1,6 +1,4 @@
-; weather.sh:
-; curl 'https://api.weatherapi.com/v1/forecast.json?key={api key}&q={location}&days=1&aqi=no&alerts=no' | jq '.current.condition.icon = "https:" + .current.condition.icon'
-(defpoll WEATHER :interval "1h" `bash $HOME/weather.sh | python scripts/weather.py`)
+(defpoll WEATHER :interval "1h" `python scripts/weather.py`)
 
 (defwidget weather_c [c]
   (box :orientation "v" 
