@@ -31,15 +31,11 @@ forecast_data = []
 for d in data["forecast"]["forecastday"]:
     forecast_data += d["hour"]
 
-print(
-    json.dumps(
-        {
-            "location": data["location"]["name"],
-            "current": get_data(data["current"]),
-            "forecast": data["forecast"]["forecastday"][0]["day"],
-            "forecast_h": [
-                get_data(h) for h in forecast_data if h["time_epoch"] > time.time()
-            ],
-        }
-    )
-)
+res = {
+    "location": data["location"]["name"],
+    "current": get_data(data["current"]),
+    "forecast": data["forecast"]["forecastday"][0]["day"],
+    "forecast_h": [get_data(h) for h in forecast_data if h["time_epoch"] > time.time()],
+}
+
+print(json.dumps(res))
