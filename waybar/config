@@ -58,7 +58,7 @@
         "framerate": 30,
         "autosens": 1,
         "bars": 64,
-        "method": "pipewire",
+        "method": "pulse",
         "source": "auto",
         "bar_delimiter": 0,
         "format-icons": [
@@ -167,9 +167,9 @@
         "format": "{icon} {volume}%",
         "tooltip": true,
         "format-muted": "󰝟 Muted",
-        "on-click": "pamixer -t",
-        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
-        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
         "scroll-step": 10,
         "format-icons": {
             "headphone": "",

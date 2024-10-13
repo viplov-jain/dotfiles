@@ -9,7 +9,7 @@
 ## Requirements
 - Install NixOS
 - Enable Hyprland
-- Add home-manager in pkgs and enable Pipewire
+- Add home-manager in pkgs and enable PulseAudio
 - clone dotfiles and ln -s ~/dotfiles ~/.config/home-manager
 - home-manager switch
 

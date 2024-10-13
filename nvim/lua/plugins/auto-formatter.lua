@@ -2,7 +2,6 @@ return {
   {
     -- Foramtter
     'mhartington/formatter.nvim',
-    version = '*',
     cmd = { 'Format', 'FormatWrite' },
     config = function()
       vim.api.nvim_create_augroup('__formatter__', { clear = true })
