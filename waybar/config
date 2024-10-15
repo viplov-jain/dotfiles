@@ -179,9 +179,9 @@
             "portable": "",
             "car": "",
             "default": [
-                "",
-                "",
-                ""
+                " ",
+                " ",
+                " "
             ]
         }
     },
@@ -201,7 +201,7 @@
     },
     "cpu": {
         "interval": 1,
-        "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+        "format": "  {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
         "format-icons": [
             "<span color='#1aff00'>▁</span>",
             "<span color='#76ff00'>▂</span>",
