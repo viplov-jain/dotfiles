@@ -32,6 +32,6 @@
     (usage_bar :scale 1 :value {EWW_BATTERY.BAT1.capacity} :label "BAT1" :flip true)
     (usage_bar :scale 1 :value {EWW_RAM.used_mem_perc} :label "Mem")
     (usage_bar :scale 1 :value {EWW_DISK["/"].used_perc} :label "Disk")
-    (usage_bar :scale 1.25 :value {jq(EWW_TEMPS, '[.[]] | max')} :label "T")
+    (usage_bar :scale 1.25 :value {EWW_CPU.avg} :label "CPU")
   )
 )

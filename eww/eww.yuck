@@ -25,8 +25,7 @@
     (box :orientation "v" :space-evently false
       (box :orientation "h" :space-evenly false
         (box :style "margin: 4px;" :width 200 :height 300 (userinfo))
-        (box :style "margin: 4px;" :width 400 :height 300 (time))
-        (box :style "margin: 4px;" :width 400 :height 300 (weather))
+        (box :style "margin: 4px;" :width 800 :height 300 (weather))
       )
       (box :orientation "h" :space-evenly false
         (box :style "margin: 4px;" :width 400 :height 300 (stocks))
@@ -42,9 +41,7 @@
 
 (include "userinfo.yuck")
 (include "stocks.yuck")
-(include "time.yuck")
 (include "weather.yuck")
 (include "music.yuck")
 (include "usage.yuck")
 (include "shortcuts.yuck")
-(include "controls.yuck")

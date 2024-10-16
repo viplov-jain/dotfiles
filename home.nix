@@ -43,6 +43,7 @@
    
     # Browsers
     firefox
+    librewolf
     ungoogled-chromium
     
     # Console

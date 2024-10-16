@@ -27,8 +27,8 @@
     (box :orientation "h" :halign "fill"
       (shortcut-button :onclick "code&" :color "rgb(28, 28, 42)" :icon "vscodium.svg") ; Code
       (shortcut-button :onclick "firefox gmail.com &" :color "white" :icon "gmail.svg") ; Gmail
-      (shortcut-button :onclick "kitty&" :color "rgb(54, 54, 54)" :icon "cmd.svg") ; cmd
-      (shortcut-button :onclick "xdg-open https://netflix.com" :color "black" :icon "netflix.svg") ; Netflix
+      (shortcut-button :onclick "kitty -d ~ &" :color "rgb(255, 255, 255)" :icon "kitty.svg") ; cmd
+      (shortcut-button :onclick "librewolf&" :color "black" :icon "librewolf.svg") ; Librewolf
       (shortcut-button :onclick "xdg-open https://youtube.com" :color "rgb(100, 25, 25)" :icon "youtube.svg") ; Youtube
       (shortcut-button :onclick "thunderbird&" :color "rgb(33, 48, 87)" :icon "thunderbird.png"); Thunderbird
       (shortcut-button :onclick "firefox&" :color "rgb(79, 31, 203)" :icon "firefox.svg"); Firefox
