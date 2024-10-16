@@ -1,8 +1,11 @@
 { config, pkgs, ... }:
-
-{
-  home.username = "viplov";
-  home.homeDirectory = "/home/viplov";
+  let
+    user = "viplov";
+    home = "/home/${user}";
+    mkConfig = dir: config.lib.file.mkOutOfStoreSymlink "${home}/dotfiles/${dir}";
+  in {
+  home.username = "${user}";
+  home.homeDirectory = "${home}";
 
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
@@ -102,18 +105,18 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
 
-    ".gitconfig".source = ./.gitconfig;
-    ".zshrc".source = ./.zshrc;
+    ".gitconfig".source = mkConfig ".gitconfig";
+    ".zshrc".source = mkConfig ".zshrc";
 
-    ".config/hypr".source = ./hypr;
-    ".config/nvim".source = ./nvim;
-    ".config/eww".source = ./eww;
-    ".config/waybar".source = ./waybar;
-    ".config/kitty".source = ./kitty;
-    ".config/dunst".source = ./dunst;
-    ".config/starship.toml".source = ./starship/config.toml;
-    ".config/neofetch".source = ./neofetch;
-    ".config/btop".source = ./btop;
+    ".config/hypr".source = mkConfig "hypr";
+    ".config/nvim".source = mkConfig "nvim";
+    ".config/eww".source = mkConfig "eww";
+    ".config/waybar".source = mkConfig "waybar";
+    ".config/kitty".source = mkConfig "kitty";
+    ".config/dunst".source = mkConfig "dunst";
+    ".config/starship.toml".source = mkConfig "starship/config.toml";
+    ".config/neofetch".source = mkConfig "neofetch";
+    ".config/btop".source = mkConfig "btop";
   };
 
   # Home Manager can also manage your environment variables through
