@@ -13,13 +13,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath) -- Ends here, this should be left alone.
 
-require('lazy').setup('plugins', { ui = { border = 'rounded' }, lockfile = "~/.nvim-lazy-lock.json" })
+require('lazy').setup('plugins', { ui = { border = 'rounded' }, lockfile = '~/.nvim-lazy-lock.json' })
 
--- Highlight yanked text for 150ms
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
+require 'setup'
 require 'remaps'

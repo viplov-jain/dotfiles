@@ -218,9 +218,4 @@ ins_right {
   padding = { left = 1 },
 }
 
-return {
-  {
-    'nvim-lualine/lualine.nvim',
-    opts = config,
-  },
-}
+return config
