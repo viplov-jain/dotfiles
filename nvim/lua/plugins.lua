@@ -86,15 +86,6 @@ return {
     end,
   },
   {
-    -- DAP
-    'rcarriga/nvim-dap-ui',
-    event = 'VeryLazy',
-    dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
-    config = function()
-      require 'opts.dap'
-    end,
-  },
-  {
     -- Diagnostics
     'folke/trouble.nvim',
     cmd = 'Trouble',

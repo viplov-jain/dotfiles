@@ -88,6 +88,7 @@
 
 
     # Nvim Plugin dependencies
+    luajitPackages.luarocks
     stylua
     lua-language-server
     clang-tools
