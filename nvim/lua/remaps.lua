@@ -64,6 +64,7 @@ M.lsp_remaps = function(event)
   --  To jump back, press <C-t>.
   map('gd', '<Cmd>Lspsaga goto_definition<CR>', '[G]oto [D]efinition')
   map('ggd', '<Cmd>Lspsaga peek_definition<CR>', 'Peek [D]efinition')
+  map('<leader>e', vim.diagnostic.open_float, 'Floating [E]rror')
 
   map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
