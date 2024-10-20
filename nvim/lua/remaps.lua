@@ -1,4 +1,4 @@
-local niv = { 'n', 'i', 'v' }
+local niv = {'n', 'i', 'v'}
 local telescope = require 'telescope.builtin'
 
 M = {}
@@ -12,6 +12,7 @@ M.global_maps = {
 
   { '<D-s>', '<Cmd>w<CR>', desc = 'Save file', mode = niv },
   { '<D-m>', '<Cmd>NvimTreeToggle<CR>', desc = 'Nvim Tree toggle', mode = niv },
+  { '<D-f>', function() require('conform').format { async = true } end, desc = 'Autoformat', mode = niv },
 
   { '<D-i>', '<Cmd>Lspsaga hover_doc<CR>', desc = 'Hover doc', mode = 'n' },
 

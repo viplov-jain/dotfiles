@@ -10,11 +10,10 @@ return {
   },
   {
     -- Formatter
-    'mhartington/formatter.nvim',
-    cmd = { 'Format', 'FormatWrite' },
-    config = function()
-      require 'opts.formatter'
-    end,
+    'stevearc/conform.nvim',
+    event = { 'BufWritePre' },
+    cmd = { 'ConformInfo' },
+    opts = require 'opts.formatter',
   },
   {
     -- Autocomplete

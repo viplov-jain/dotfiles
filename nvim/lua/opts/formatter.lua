@@ -1,11 +1,12 @@
-require('formatter').setup {
-  logging = true,
-  log_level = vim.log.levels.ERROR,
-  filetype = {
-    lua = { require('formatter.filetypes.lua').stylua },
-    cpp = { require('formatter.filetypes.lua').clangformat },
-    javascript = { require('formatter.filetypes.javascript').prettier },
-    python = { require('formatter.filetypes.python').black },
-    rust = { require('formatter.filetypes.rust').rustfmt },
+--- @module "conform"
+--- @type conform.setupOpts
+return {
+  formatters_by_ft = {
+    lua = { 'stylua' },
+    python = { 'black', 'isort' },
+    javascript = { 'prettier' },
   },
+  format_on_save = { timeout_ms = 500 }
 }
+
+
