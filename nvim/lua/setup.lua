@@ -14,3 +14,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 -- Setup fzf in telescope
 require('telescope').load_extension 'fzf'
+
+-- Setup key maps
+require('which-key').add(require('remaps').global_maps)

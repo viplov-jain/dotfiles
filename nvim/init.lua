@@ -16,4 +16,3 @@ vim.opt.rtp:prepend(lazypath) -- Ends here, this should be left alone.
 require('lazy').setup('plugins', { ui = { border = 'rounded' }, lockfile = '~/.nvim-lazy-lock.json' })
 
 require 'setup'
-require 'remaps'

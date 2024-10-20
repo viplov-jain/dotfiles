@@ -1,7 +1,8 @@
 local niv = { 'n', 'i', 'v' }
 local telescope = require 'telescope.builtin'
 
-local mapping = {
+M = {}
+M.global_maps = {
   -- Remappings
   -- Match centering
   { 'n', 'nzz', desc = 'Next Match' },
@@ -9,55 +10,38 @@ local mapping = {
   -- Format on paste
   { 'p', 'p==', desc = 'Paste' },
 
-  -- Control key
-  { '<C-s>', '<Cmd>w<CR>', desc = 'Save file', mode = niv },
-  { '<C-n>', '<Cmd>NvimTreeToggle<CR>', desc = 'Toggle [N]eotree', mode = niv },
-  { '<C-f>', '<Cmd>Format<CR>', desc = '[F]ormat buffer', mode = niv },
-  { '<C-z>', '<Cmd>ZenMode<CR>', desc = 'Toggle Zen Mode', mode = niv },
+  { '<D-s>', '<Cmd>w<CR>', desc = 'Save file', mode = niv },
+  { '<D-m>', '<Cmd>NvimTreeToggle<CR>', desc = 'Nvim Tree toggle', mode = niv },
+
+  { '<D-i>', '<Cmd>Lspsaga hover_doc<CR>', desc = 'Hover doc', mode = 'n' },
 
   -- Alt key
   -- Move lines
-  { '<A-k>', ":m '<-2<CR>gv=gv", desc = 'Move selected lines up', mode = 'v' },
-  { '<A-k>', ':m .-2<cr>==', desc = 'Move selected lines up' },
-  { '<A-j>', ":m '>+1<CR>gv=gv", desc = 'Move selected lines down', mode = 'v' },
-  { '<A-j>', ':m .+1<cr>==', desc = 'Move selected lines down' },
+  { '<D-k>', ":m '<-2<CR>gv=gv", desc = 'Move selected lines up', mode = 'v' },
+  { '<D-k>', ':m .-2<cr>==', desc = 'Move selected lines up' },
+  { '<D-j>', ":m '>+1<CR>gv=gv", desc = 'Move selected lines down', mode = 'v' },
+  { '<D-j>', ':m .+1<cr>==', desc = 'Move selected lines down' },
   -- Bufferline controls
-  { '<C-t>', '<Cmd>enew<CR>', desc = 'New buffer', mode = niv },
-  { '<C-k>', '<Cmd>bnext<CR>', desc = 'Next buffer', mode = niv },
-  { '<C-j>', '<Cmd>bprevious<CR>', desc = 'Previous buffer', mode = niv },
-  { '<c-q>', '<Cmd>bd<CR>', desc = 'Close buffer', mode = niv },
+  { '<D-n>', '<Cmd>enew<CR>', desc = 'New buffer', mode = niv },
+  { '<D-Tab>', '<Cmd>bnext<CR>', desc = 'Next buffer', mode = niv },
+  { '<D-S-Tab>', '<Cmd>bprevious<CR>', desc = 'Previous buffer', mode = niv },
+  { '<D-q>', '<Cmd>bd<CR>', desc = 'Close buffer', mode = niv },
 
   -- Indent/Unindent with Tab/Shift+Tab
   { '<Tab>', '>>', desc = 'Indent', mode = { 'n', 'v' } },
   { '<S-Tab>', '<<', desc = 'Unindent', mode = { 'n', 'v' } },
 
   -- Comment toggle
-  { '?', '<Cmd>CommentToggle<CR>', desc = 'Comment Toggle', mode = { 'n', 'v' } },
+  { '<D-?>', '<Cmd>CommentToggle<CR>', desc = 'Comment Toggle', mode = { 'n', 'v' } },
 
-  { '<leader>oo', '<Cmd>Oil<CR>', desc = 'File explorer' },
-
-  -- ░█▀▀░█▀▄░█▀█░█░█░█▀█░█▀▀
-  -- ░█░█░█▀▄░█░█░█░█░█▀▀░▀▀█
-  -- ░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀░░░▀▀▀
-
-  { '<leader>s', group = '[S]earch', icon = '' },
-  { '<leader>d', group = '[D]ebugger', icon = '' },
+  { '<leader>f', group = '[F]ind', icon = '' },
   { '<leader>t', group = '[T]rouble', icon = '' },
-  { 't', group = '[T]erminal', icon = '' },
 
   -- Search
-  { '<leader>sf', telescope.find_files, desc = 'Search file' },
-  { '<leader>sg', telescope.live_grep, desc = 'Search grep' },
-  { '<leader>sb', telescope.buffers, desc = 'Search buffers' },
-  { '<leader>sh', telescope.help_tags, desc = 'Search help' },
-
-  -- Debugger
-  { '<leader>db', '<Cmd> DapToggleBreakpoint <CR>', desc = 'Toggle breakpoint at line' },
-  { '<leader>dr', '<Cmd> DapContinue <CR>', desc = 'Start or continue the debugger' },
-
-  -- Terminal
-  { 'tg', '<Cmd> lua _LAZYGIT_TOGGLE() <CR>', desc = 'Toggle lazygit' },
-  { 'tb', '<Cmd> lua _BTOP_TOGGLE() <CR>', desc = 'Toggle btop' },
+  { '<leader>ff', telescope.find_files, desc = '[F]ind [f]ile' },
+  { '<leader>fg', telescope.live_grep, desc = '[F]ind [s]tring' },
+  { '<leader>fb', telescope.buffers, desc = '[F]ind [b]uffers' },
+  { '<leader>fh', telescope.help_tags, desc = '[F]ind [h]elp' },
 
   -- Trouble
   { '<leader>tt', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Diagnostics (Trouble)' },
@@ -72,4 +56,37 @@ local mapping = {
   { '<leader>tQ', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix List (Trouble)' },
 }
 
-require('which-key').add(mapping)
+M.lsp_remaps = function(event)
+  local map = function(keys, func, desc, mode)
+    mode = mode or 'n'
+    vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+  end
+
+  -- Jump to the definition of the word under your cursor.
+  --  This is where a variable was first declared, or where a function is defined, etc.
+  --  To jump back, press <C-t>.
+  map('gd', '<Cmd>Lspsaga goto_definition<CR>', '[G]oto [D]efinition')
+  map('ggd', '<Cmd>Lspsaga peek_definition<CR>', 'Peek [D]efinition')
+
+  map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+  map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+  map('<leader>D', '<Cmd>Lspsaga goto_type_definition<CR>', 'Type [D]efinition')
+  map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+  map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+  map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+
+  -- The following code creates a keymap to toggle inlay hints in your
+  -- code, if the language server you are using supports them
+  --
+  -- This may be unwanted, since they displace some of your code
+  local client = vim.lsp.get_client_by_id(event.data.client_id)
+  if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+    map('<leader>th', function()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
+    end, '[T]oggle Inlay [H]ints')
+  end
+end
+
+return M

@@ -22,6 +22,7 @@
     clang-tools
     (python3.withPackages(ps: with ps; [ pip requests ]))
     gnumake
+
     rustup
     nodejs_22
 
@@ -30,6 +31,7 @@
     socat
     killall
     fzf
+    fd
     yazi-unwrapped
     zip
     unzip

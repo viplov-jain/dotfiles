@@ -21,9 +21,8 @@ return {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'L3MON4D3/LuaSnip' },
-      -- Other:
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
       'hrsh7th/cmp-path',
     },
     config = function()
@@ -79,6 +78,7 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       { 'j-hui/fidget.nvim', opts = {} },
+      { 'nvimdev/lspsaga.nvim', opts = {} },
     },
     config = function()
       require 'lsp.lspattach'
@@ -99,7 +99,7 @@ return {
       require 'opts.treesitter'
     end,
   },
-  'tpope/vim-fugitive',
   'folke/which-key.nvim',
+  'tpope/vim-fugitive',
   'folke/zen-mode.nvim',
 }
