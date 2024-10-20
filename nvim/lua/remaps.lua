@@ -17,10 +17,10 @@ M.global_maps = {
 
   -- Alt key
   -- Move lines
-  { '<D-k>', ":m '<-2<CR>gv=gv", desc = 'Move selected lines up', mode = 'v' },
-  { '<D-k>', ':m .-2<cr>==', desc = 'Move selected lines up' },
-  { '<D-j>', ":m '>+1<CR>gv=gv", desc = 'Move selected lines down', mode = 'v' },
-  { '<D-j>', ':m .+1<cr>==', desc = 'Move selected lines down' },
+  { '<C-k>', ":m '<-2<CR>gv=gv", desc = 'Move selected lines up', mode = 'v' },
+  { '<C-k>', ':m .-2<cr>==', desc = 'Move selected lines up' },
+  { '<C-j>', ":m '>+1<CR>gv=gv", desc = 'Move selected lines down', mode = 'v' },
+  { '<C-j>', ':m .+1<cr>==', desc = 'Move selected lines down' },
   -- Bufferline controls
   { '<D-n>', '<Cmd>enew<CR>', desc = 'New buffer', mode = niv },
   { '<D-Tab>', '<Cmd>bnext<CR>', desc = 'Next buffer', mode = niv },
