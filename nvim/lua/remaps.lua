@@ -31,9 +31,6 @@ M.global_maps = {
   { '<Tab>', '>>', desc = 'Indent', mode = { 'n', 'v' } },
   { '<S-Tab>', '<<', desc = 'Unindent', mode = { 'n', 'v' } },
 
-  -- Comment toggle
-  { '<D-?>', '<Cmd>CommentToggle<CR>', desc = 'Comment Toggle', mode = { 'n', 'v' } },
-
   { '<leader>f', group = '[F]ind', icon = '' },
   { '<leader>t', group = '[T]rouble', icon = '' },
 

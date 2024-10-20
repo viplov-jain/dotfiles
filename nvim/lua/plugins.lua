@@ -36,11 +36,6 @@ return {
     opts = {},
   },
   {
-    -- Auto Comments
-    'numToStr/Comment.nvim',
-    opts = {},
-  },
-  {
     -- Bufferline
     'akinsho/bufferline.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
