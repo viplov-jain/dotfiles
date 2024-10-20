@@ -5,7 +5,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-
 -- Setup fzf in telescope
 require('telescope').load_extension 'fzf'
 

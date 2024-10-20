@@ -6,7 +6,5 @@ return {
     python = { 'black', 'isort' },
     javascript = { 'prettier' },
   },
-  format_on_save = { timeout_ms = 500 }
+  format_on_save = { timeout_ms = 500 },
 }
-
-
