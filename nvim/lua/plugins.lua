@@ -5,6 +5,7 @@ return {
     name = 'catppuccin',
     priority = 1000,
     config = function()
+      require('catppuccin').setup(require 'opts.theme')
       vim.cmd.colorscheme 'catppuccin-mocha'
     end,
   },
