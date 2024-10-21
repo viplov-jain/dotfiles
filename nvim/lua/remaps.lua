@@ -1,4 +1,5 @@
 local niv = { 'n', 'i', 'v' }
+local nv = { 'n', 'v' }
 local telescope = require 'telescope.builtin'
 
 M = {}
@@ -10,18 +11,8 @@ M.global_maps = {
   -- Format on paste
   { 'p', 'p==', desc = 'Paste' },
 
-  { '<D-s>', '<Cmd>w<CR>', desc = 'Save file', mode = niv },
-  { '<D-m>', '<Cmd>NvimTreeToggle<CR>', desc = 'Nvim Tree toggle', mode = niv },
-  {
-    '<D-f>',
-    function()
-      require('conform').format { async = true }
-    end,
-    desc = 'Autoformat',
-    mode = niv,
-  },
-
-  { '<D-i>', '<Cmd>Lspsaga hover_doc<CR>', desc = 'Hover doc', mode = 'n' },
+  { '<leader>n', '<Cmd>NvimTreeToggle<CR>', desc = 'Nvim Tree toggle', mode = nv },
+  { '<leader>k', '<Cmd>Lspsaga hover_doc<CR>', desc = 'Hover doc', mode = 'n' },
 
   -- Alt key
   -- Move lines
@@ -30,14 +21,14 @@ M.global_maps = {
   { '<C-j>', ":m '>+1<CR>gv=gv", desc = 'Move selected lines down', mode = 'v' },
   { '<C-j>', ':m .+1<cr>==', desc = 'Move selected lines down' },
   -- Bufferline controls
-  { '<D-n>', '<Cmd>enew<CR>', desc = 'New buffer', mode = niv },
-  { '<D-Tab>', '<Cmd>bnext<CR>', desc = 'Next buffer', mode = niv },
-  { '<D-S-Tab>', '<Cmd>bprevious<CR>', desc = 'Previous buffer', mode = niv },
-  { '<D-q>', '<Cmd>bd<CR>', desc = 'Close buffer', mode = niv },
+  { '<C-n>', '<Cmd>enew<CR>', desc = 'New buffer', mode = niv },
+  { '<C-Tab>', '<Cmd>bnext<CR>', desc = 'Next buffer', mode = niv },
+  { '<C-S-Tab>', '<Cmd>bprevious<CR>', desc = 'Previous buffer', mode = niv },
+  { '<C-q>', '<Cmd>bd<CR>', desc = 'Close buffer', mode = niv },
 
   -- Indent/Unindent with Tab/Shift+Tab
-  { '<Tab>', '>>', desc = 'Indent', mode = { 'n', 'v' } },
-  { '<S-Tab>', '<<', desc = 'Unindent', mode = { 'n', 'v' } },
+  { '<Tab>', '>>', desc = 'Indent', mode = nv },
+  { '<S-Tab>', '<<', desc = 'Unindent', mode = nv },
 
   { '<leader>f', group = '[F]ind', icon = '' },
   { '<leader>t', group = '[T]rouble', icon = '' },
