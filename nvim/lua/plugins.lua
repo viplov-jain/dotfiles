@@ -96,6 +96,7 @@ return {
       require 'opts.treesitter'
     end,
   },
+  { 'lewis6991/gitsigns.nvim', opts = {} },
   'folke/which-key.nvim',
   'tpope/vim-fugitive',
   'folke/zen-mode.nvim',
