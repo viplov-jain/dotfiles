@@ -3,7 +3,7 @@ capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp'
 
 local servers = {
   clangd = {
-    filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
+    filetypes = { 'c', 'h', 'cpp', 'hpp', 'objc', 'objcpp', 'cuda' },
   },
   rust_analyzer = {},
   lua_ls = {
