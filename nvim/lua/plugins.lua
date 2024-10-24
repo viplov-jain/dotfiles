@@ -99,5 +99,8 @@ return {
   { 'lewis6991/gitsigns.nvim', opts = {} },
   'folke/which-key.nvim',
   'tpope/vim-fugitive',
+  'tpope/vim-surround',
+  'tpope/vim-sensible',
+  'wellle/targets.vim',
   'folke/zen-mode.nvim',
 }
