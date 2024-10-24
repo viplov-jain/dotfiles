@@ -50,7 +50,35 @@ M.global_maps = {
   },
   { '<leader>tL', '<cmd>Trouble loclist toggle<cr>', desc = 'Location List (Trouble)' },
   { '<leader>tQ', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix List (Trouble)' },
+
+  { '<leader>h', group = 'Git [H]unk', icon = '󰊢' },
 }
+
+M.gitsigns = function()
+  local gitsigns = require 'gitsigns'
+
+  local function map(l, r, desc, mode)
+    require('which-key').add { { l, r, desc = 'Git: ' .. desc, mode = mode } }
+  end
+
+  -- Actions
+  map('<leader>hr', gitsigns.reset_hunk, '[R]eset')
+  map('<leader>hr', function()
+    gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
+  end, '[R]eset', 'v')
+  map('<leader>hR', gitsigns.reset_buffer, '[R]eset buffer')
+  map('<leader>hp', gitsigns.preview_hunk, '[P]review')
+  map('<leader>hb', function()
+    gitsigns.blame_line { full = true }
+  end, '[B]lame')
+  map('<leader>hd', gitsigns.diffthis, '[D]iff')
+  map('<leader>hD', function()
+    gitsigns.diffthis '~'
+  end, '[D]iff ~')
+
+  -- Text object
+  map('ih', ':<C-U>Gitsigns select_hunk<CR>', '[H]unk text object', { 'o', 'x' })
+end
 
 M.lsp_remaps = function(event)
   local map = function(keys, func, desc, mode)
