@@ -1,6 +1,7 @@
 local niv = { 'n', 'i', 'v' }
 local nv = { 'n', 'v' }
 local telescope = require 'telescope.builtin'
+local gitsigns = require 'gitsigns'
 
 M = {}
 M.global_maps = {
@@ -51,33 +52,37 @@ M.global_maps = {
   { '<leader>tQ', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix List (Trouble)' },
 
   { '<leader>h', group = 'Git [H]unk', icon = '󰊢' },
-}
-
-M.gitsigns = function()
-  local gitsigns = require 'gitsigns'
-
-  local function map(l, r, desc, mode)
-    require('which-key').add { { l, r, desc = 'Git: ' .. desc, mode = mode } }
-  end
-
   -- Actions
-  map('<leader>hr', gitsigns.reset_hunk, '[R]eset')
-  map('<leader>hr', function()
-    gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-  end, '[R]eset', 'v')
-  map('<leader>hR', gitsigns.reset_buffer, '[R]eset buffer')
-  map('<leader>hp', gitsigns.preview_hunk, '[P]review')
-  map('<leader>hb', function()
-    gitsigns.blame_line { full = true }
-  end, '[B]lame')
-  map('<leader>hd', gitsigns.diffthis, '[D]iff')
-  map('<leader>hD', function()
-    gitsigns.diffthis '~'
-  end, '[D]iff ~')
+  { '<leader>hr', gitsigns.reset_hunk, desc = '[R]eset' },
+  {
+    '<leader>hr',
+    function()
+      gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
+    end,
+    desc = '[R]eset',
+    mode = 'v',
+  },
+  { '<leader>hR', gitsigns.reset_buffer, desc = '[R]eset buffer' },
+  { '<leader>hp', gitsigns.preview_hunk, desc = '[P]review' },
+  {
+    '<leader>hb',
+    function()
+      gitsigns.blame_line { full = true }
+    end,
+    desc = '[B]lame',
+  },
+  { '<leader>hd', gitsigns.diffthis, desc = '[D]iff' },
+  {
+    '<leader>hD',
+    function()
+      gitsigns.diffthis '~'
+    end,
+    desc = '[D]iff ~',
+  },
 
   -- Text object
-  map('ih', ':<C-U>Gitsigns select_hunk<CR>', '[H]unk text object', { 'o', 'x' })
-end
+  { 'ih', ':<C-U>Gitsigns select_hunk<CR>', desc = '[H]unk text object', mode = { 'o', 'x' } },
+}
 
 M.lsp_remaps = function(event)
   local map = function(keys, func, desc, mode)

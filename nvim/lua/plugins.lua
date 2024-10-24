@@ -96,15 +96,7 @@ return {
       require 'opts.treesitter'
     end,
   },
-  {
-    'lewis6991/gitsigns.nvim',
-    dependencies = 'folke/which-key.nvim',
-    opts = {
-      on_attach = function()
-        require('remaps').gitsigns()
-      end,
-    },
-  },
+  { 'lewis6991/gitsigns.nvim', opts = {} },
   'folke/which-key.nvim',
   'tpope/vim-fugitive',
   'tpope/vim-surround',
