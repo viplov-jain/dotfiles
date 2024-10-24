@@ -12,7 +12,6 @@ M.global_maps = {
   { 'p', 'p==', desc = 'Paste' },
 
   { '<leader>n', '<Cmd>NvimTreeToggle<CR>', desc = 'Nvim Tree toggle', mode = nv },
-  { '<leader>k', '<Cmd>Lspsaga hover_doc<CR>', desc = 'Hover doc', mode = 'n' },
 
   -- Alt key
   -- Move lines
@@ -92,15 +91,16 @@ M.lsp_remaps = function(event)
   map('gd', '<Cmd>Lspsaga goto_definition<CR>', '[G]oto [D]efinition')
   map('ggd', '<Cmd>Lspsaga peek_definition<CR>', 'Peek [D]efinition')
   map('<leader>e', vim.diagnostic.open_float, 'Floating [E]rror')
+  map('<leader>k', '<Cmd>Lspsaga hover_doc<CR>', 'Hover doc')
+  map('<leader>lf', '<Cmd>Lspsaga finder<CR>', '[L]sp [F]ind')
 
   map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-  map('<leader>D', '<Cmd>Lspsaga goto_type_definition<CR>', 'Type [D]efinition')
+  map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
   map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-  map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  map('<leader>rn', '<Cmd>Lspsaga rename<CR>', '[R]e[n]ame')
   map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
-  map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
   -- The following code creates a keymap to toggle inlay hints in your
   -- code, if the language server you are using supports them
