@@ -60,6 +60,7 @@
     # Hyprland
     hyprpaper
     hyprlock
+    hypridle
     rofi-wayland
     wl-clipboard
 
