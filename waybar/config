@@ -28,7 +28,7 @@
     },
     "hyprland/workspaces": {
         "sort-by-name": true,
-        "format": "{icon} {windows}",
+        "format": "{icon} {windows} ",
         "format-icons": {
             "special": "S"
         },

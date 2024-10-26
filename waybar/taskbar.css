@@ -1,13 +1,18 @@
 
 #taskbar button:hover * {
-    -gtk-icon-transform: scale(1.6);
+  -gtk-icon-transform: scale(1.6);
 }
 
 #taskbar button.active {
-    background: rgb(45, 45, 45);
-    border-radius: 10px;
+  background: @surface1;
+  border-radius: 10px;
 }
 
 #taskbar button.active * {
-    -gtk-icon-transform: scale(1.2);
+  -gtk-icon-transform: scale(1.4);
 }
+
+#taskbar button:hover {
+  background: @surface2;
+}
+

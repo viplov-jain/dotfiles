@@ -1,48 +1,26 @@
 
 #custom-power {
-    color: rgb(252, 2, 2);
+    color: @maroon;
 }
 
-#window {
-    color: rgb(157, 223, 60);
-}
-
-#network {
-    color: rgb(204, 185, 134);
-}
 
 #bluetooth {
-    color: rgb(89, 158, 223);
-}
-
-#battery {
-    color: rgb(187, 206, 200);
+    color: @blue;
 }
 
 #pulseaudio {
-    color: rgb(184, 160, 187);
+    color: @pink;
 }
 
 #clock {
-    color: rgb(132, 207, 201);
+    color: @green;
 }
 
-#battery.1 {
-    color: rgb(184, 160, 187);
-}
-
-#battery.2 {
-    color: rgb(204, 185, 134);
-}
 #cava {
-    color: rgb(187, 206, 200);
+    color: @sky;
 }
 
-#cpu, 
-#temprature {
-    color: rgb(89, 158, 223);
+#temperature {
+    color: @teal;
 }
 
-window {
-    background: black;
-}

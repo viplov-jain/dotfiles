@@ -47,21 +47,19 @@ window#waybar {
 }
 
 tooltip {
-    background: #000000;
+    background: @surface2;
     border-radius: 10px;
     border-width: 0px;
-    border-style: solid;
-    border-color: #11111b;
 }
 
 .modules-left,
 .modules-center, 
 .modules-right {
-    background: rgb(8, 10, 10);
+    background: @surface0;
     opacity: 1.0;
     /* margin: 0px 0px;
     margin-top: 0px; */
-    border: 1px solid #181825;
+    border: 1px solid @crust;
     border: 4px;
     min-width: 20px;
     padding: 0px 10px;
@@ -82,14 +80,14 @@ tooltip {
 @keyframes blink {
     to {
         background-color: #ffffff;
-        color: black;
+        color: #000000;
     }
 }
 
 #temperature.critical,
 #battery.critical:not(.charging) {
-    background-color: #F53C3C;
-    color: #EEEEEE;
+    background-color: @red;
+    color: @text;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
