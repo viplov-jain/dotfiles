@@ -35,6 +35,7 @@ local ensure_installed = {
 
   'javascript',
   'typescript',
+  'tsx',
   'html',
   'css',
   'graphql',

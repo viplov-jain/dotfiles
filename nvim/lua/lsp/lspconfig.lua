@@ -17,6 +17,7 @@ local servers = {
     },
   },
   pyright = {},
+  ts_ls = {},
 }
 
 for server, settings in pairs(servers) do

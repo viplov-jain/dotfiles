@@ -35,9 +35,16 @@ M.global_maps = {
 
   -- Search
   { '<leader>ff', telescope.find_files, desc = '[F]ind [f]ile' },
-  { '<leader>fg', telescope.live_grep, desc = '[F]ind [s]tring' },
+  { '<leader>fg', telescope.live_grep, desc = '[F]ind [g]rep' },
   { '<leader>fb', telescope.buffers, desc = '[F]ind [b]uffers' },
   { '<leader>fh', telescope.help_tags, desc = '[F]ind [h]elp' },
+  {
+    '<leader>fs',
+    function()
+      telescope.live_grep { shorten_path = true, word_match = '-w', only_sort_text = true, search = '' }
+    end,
+    desc = '[F]ind [S]tring fuzzy',
+  },
 
   -- Trouble
   { '<leader>tt', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Diagnostics (Trouble)' },
