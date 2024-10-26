@@ -41,7 +41,7 @@ M.global_maps = {
   {
     '<leader>fs',
     function()
-      telescope.live_grep { shorten_path = true, word_match = '-w', only_sort_text = true, search = '' }
+      telescope.grep_string { shorten_path = true, word_match = '-w', only_sort_text = true, search = '' }
     end,
     desc = '[F]ind [S]tring fuzzy',
   },
