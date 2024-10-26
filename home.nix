@@ -43,8 +43,10 @@
     vim
     neovim-unwrapped
 
-    # Fonts
+    # Fonts and themes
     (nerdfonts.override { fonts = [ "Hack" "FiraCode" "DroidSansMono" ]; })
+    monaspace
+    papirus-icon-theme
    
     # Browsers
     firefox

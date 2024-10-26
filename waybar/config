@@ -15,12 +15,8 @@
         "cava" 
     ],
     "modules-right": [
-        "network",
         "bluetooth",
-        "battery",
         "pulseaudio",
-        // "pulseaudio#microphone",
-        // "privacy",
         "clock",
         "temperature",
         "cpu"
@@ -53,11 +49,18 @@
             "*": 0
         }
     },
-
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 18,
+      "icon-theme": "Papirus-Dark",
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "close"
+    },
     "cava": {
         "framerate": 30,
         "autosens": 1,
-        "bars": 64,
+        "bars": 36,
         "method": "pulse",
         "source": "auto",
         "bar_delimiter": 0,
@@ -76,15 +79,6 @@
         },
         "on-click": "playerctl -p chromium play-pause" 
     },
-    "network": {
-        "format": "ifname",
-        "tooltip-format": "{ipaddr}/{cidr}",
-        "format-disconnected": "Disconnected",
-        "format-wifi": "",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-        "format-ethernet": "󰈀",
-        "tooltip-format-ethernet": "{ipaddr}/{cidr}"
-    },
     "bluetooth": {
         "format": " {status}",
         "tooltip-format": "{controller_address_type} {controller_address}",
@@ -98,28 +92,9 @@
         "tooltip-format-connected-battery": "{device_alias} {device_battery_percentage}%",
         "tooltip-format-enumerate-connected": "{device_alias}"
     },
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 18,
-        "icon-theme": "Papirus-Dark",
-        // "active-first": true,
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close"
-    },
-    "hyprland/window": {
-        "format": "{}",
-        "rewrite": {
-            "(.*) Youtube.*": "󰗃 $1",
-            "(.*) GitHub.*": "󰊤 $1",
-            "(.*) - Chromium": "󰊯 $1",
-            "(.*) - Firefox": "󰈹 $1",
-            "(.*) - Code - OSS": " $1"
-        }
-    },
     "clock": {
-        "format": "󰃰 {:%R %a, %d %b}",
-        "format-alt": " {:%R}",
+        "format": "󰃰  {:%R %a, %d %b}",
+        "format-alt": "  {:%R}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "month",
@@ -138,33 +113,8 @@
             "on-scroll-down": "shift_down"
         }
     },
-    "battery": {
-        "states": {
-            "good": 90,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}",
-        "format-plugged": "",
-        "format-full": "",
-        "format-time": "{H}h {M}m",
-        "weighted-average": true,
-        "format-icons": [
-            "󱃍",
-            "󰁺",
-            "󰁻",
-            "󰁼",
-            "󰁽",
-            "󰁾",
-            "󰁿",
-            "󰂀",
-            "󰂁",
-            "󰂂",
-            "󰁹"
-        ]
-    },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "tooltip": true,
         "format-muted": "󰝟 Muted",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -213,21 +163,4 @@
             "<span color='#ff0000'>█</span>"
         ]
     },
-    "privacy": {
-        "icon-spacing": 4,
-        "icon-size": 18,
-        "transition-duration": 250,
-        "modules": [
-            {
-                "type": "screenshare",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            },
-            {
-                "type": "audio-in",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            }
-        ]
-    }
 }

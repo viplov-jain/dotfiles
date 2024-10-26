@@ -1,3 +1,5 @@
+@import "mocha.css";
+
 * {
     border: none;
     border-radius: 0px;
@@ -5,12 +7,12 @@
     font-style: normal;
     min-height: 0;
     background-blend-mode: darken;
+    color: @text;
 }
 
 window#waybar {
-    background: rgba(25, 25, 40, 0.5);
-    border-bottom: 1px solid #313030;
-    color: #f4d9e1
+    background: shade(@base, 0.9);
+    border: 2px solid shade(@crust, 0.3);
 }
 
 #temperature,
