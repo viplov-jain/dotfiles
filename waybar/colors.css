@@ -1,26 +1,26 @@
 
 #custom-power {
-    color: @maroon;
+  color: @maroon;
 }
 
 
 #bluetooth {
-    color: @blue;
+  color: @blue;
 }
 
 #pulseaudio {
-    color: @pink;
+  color: @pink;
 }
 
 #clock {
-    color: @green;
+  color: @green;
 }
 
 #cava {
-    color: @sky;
+  color: @sky;
 }
 
 #temperature {
-    color: @teal;
+  color: @teal;
 }
 

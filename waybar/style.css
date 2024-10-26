@@ -1,18 +1,18 @@
 @import "mocha.css";
 
 * {
-    border: none;
-    border-radius: 0px;
-    font-family: JetBrains Mono;
-    font-style: normal;
-    min-height: 0;
-    background-blend-mode: darken;
-    color: @text;
+  border: none;
+  border-radius: 0px;
+  font-family: JetBrains Mono;
+  font-style: normal;
+  min-height: 0;
+  background-blend-mode: darken;
+  color: @text;
 }
 
 window#waybar {
-    background: shade(@base, 0.9);
-    border: 2px solid shade(@crust, 0.3);
+  background: shade(@base, 0.9);
+  border: 2px solid shade(@crust, 0.3);
 }
 
 #temperature,
@@ -29,7 +29,7 @@ window#waybar {
 #memory,
 #privacy,
 #taskbar {
-    padding: 0px 5px;
+  padding: 0px 5px;
 }
 
 #cpu {
@@ -41,58 +41,59 @@ window#waybar {
 }
 
 #custom-power {
-    font-size: 1.2rem;
-    min-width: 0px;
-    /* margin: auto; */
+  font-size: 1.2rem;
+  min-width: 0px;
+  /* margin: auto; */
 }
 
 tooltip {
-    background: @surface2;
-    border-radius: 10px;
-    border-width: 0px;
+  color: @lavender;
+  background: @surface2;
+  border-radius: 10px;
+  border-width: 0px;
 }
 
 .modules-left,
 .modules-center, 
 .modules-right {
-    background: @surface0;
-    opacity: 1.0;
-    /* margin: 0px 0px;
-    margin-top: 0px; */
-    border: 1px solid @crust;
-    border: 4px;
-    min-width: 20px;
-    padding: 0px 10px;
+  background: @surface0;
+  opacity: 1.0;
+  /* margin: 0px 0px;
+  margin-top: 0px; */
+  border: 1px solid @crust;
+  border: 4px;
+  min-width: 20px;
+  padding: 0px 10px;
 }
 
 .modules-left {
-    border-radius: 0px 20px 20px 0px;
+  border-radius: 0px 20px 20px 0px;
 }
 
 .modules-center {
-    border-radius: 20px 20px 20px 20px;
+  border-radius: 20px 20px 20px 20px;
 }
 
 .modules-right {
-    border-radius: 20px 0px 0px 20px;
+  border-radius: 20px 0px 0px 20px;
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
 }
 
 #temperature.critical,
 #battery.critical:not(.charging) {
-    background-color: @red;
-    color: @text;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: @red;
+  color: @text;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 
