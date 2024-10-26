@@ -80,12 +80,16 @@ return {
     dependencies = {
       { 'j-hui/fidget.nvim', opts = {} },
       { 'nvimdev/lspsaga.nvim', opts = {} },
-      { 'rachartier/tiny-inline-diagnostic.nvim', opts = {} },
     },
     config = function()
       require 'lsp.lspattach'
       require 'lsp.lspconfig'
-      vim.diagnostic.config { virtual_text = false }
+    end,
+  },
+  {
+    'mfussenegger/nvim-lint',
+    config = function()
+      require 'lsp.lint'
     end,
   },
   {

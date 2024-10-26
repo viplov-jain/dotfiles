@@ -20,7 +20,7 @@
     gcc
     libgcc
     clang-tools
-    (python3.withPackages(ps: with ps; [ pip requests ]))
+    (python3.withPackages(ps: with ps; [ pip requests black isort mypy flake8 ]))
     gnumake
 
     rustup
@@ -95,9 +95,6 @@
     lua-language-server
     clang-tools
     pyright
-    black
-    isort
-    
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
