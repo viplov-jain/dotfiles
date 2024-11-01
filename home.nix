@@ -78,8 +78,9 @@
     curl
     jq
     btop
-    neofetch
+    fastfetch
     ripgrep
+    libnotify
 
     # Media
     youtube-music
