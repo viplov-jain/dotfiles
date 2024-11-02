@@ -1,13 +1,17 @@
 local function lsp_status()
   local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
   local clients = vim.lsp.get_clients()
+  local attached_lsps = {}
   for _, client in ipairs(clients) do
     local filetypes = client.config.filetypes
     if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-      return ' LSP: ' .. client.name
+      table.insert(attached_lsps, client.name)
     end
   end
-  return 'No Active LSP'
+  if next(attached_lsps) == nil then
+    return 'No Active LSP'
+  end
+  return ' LSP: ' .. table.concat(attached_lsps, ', ')
 end
 return {
   options = {
