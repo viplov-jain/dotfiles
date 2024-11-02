@@ -100,6 +100,11 @@ return {
       require 'opts.treesitter'
     end,
   },
+  {
+    'f-person/git-blame.nvim',
+    event = 'VeryLazy',
+    opts = require 'opts.git-blame',
+  },
   { 'lewis6991/gitsigns.nvim', opts = {} },
   { 'stevearc/oil.nvim', opts = {} },
   { 'akinsho/toggleterm.nvim', opts = {} },
