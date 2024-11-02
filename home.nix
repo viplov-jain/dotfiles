@@ -1,9 +1,10 @@
 { config, pkgs, ... }:
-  let
-    user = "viplov";
-    home = "/home/${user}";
-    mkConfig = dir: config.lib.file.mkOutOfStoreSymlink "${home}/dotfiles/${dir}";
-  in {
+let
+  user = "viplov";
+  home = "/home/${user}";
+  mkConfig = dir: config.lib.file.mkOutOfStoreSymlink "${home}/dotfiles/${dir}";
+in
+{
   home.username = "${user}";
   home.homeDirectory = "${home}";
 
@@ -11,17 +12,20 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
-  
+
   imports = [
     ./lang/c.nix
     ./lang/python.nix
     ./lang/lua.nix
+    ./lang/nix.nix
+
+    ./notifications/dunst.nix
   ];
 
   home.packages = with pkgs; [
 
     qemu
-    
+
     # Dev
     gnumake
 
@@ -46,21 +50,26 @@
     neovim-unwrapped
 
     # Fonts and themes
-    (nerdfonts.override { fonts = [ "Hack" "FiraCode" "DroidSansMono" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "Hack"
+        "FiraCode"
+      ];
+    })
     monaspace
     papirus-icon-theme
-   
+
     # Browsers
     firefox
     librewolf
     ungoogled-chromium
-    
+
     # Console
     kitty
-    
+
     # File explorer
-    xfce.thunar 
-    
+    xfce.thunar
+
     # Hyprland
     hyprpaper
     hyprlock
@@ -71,9 +80,8 @@
     # GUI
     starship
     cava
-    waybar 
+    waybar
     eww
-    dunst
 
     # Cmds
     wget
@@ -82,7 +90,6 @@
     btop
     fastfetch
     ripgrep
-    libnotify
 
     # Media
     youtube-music
@@ -112,7 +119,6 @@
     ".config/eww".source = mkConfig "eww";
     ".config/waybar".source = mkConfig "waybar";
     ".config/kitty".source = mkConfig "kitty";
-    ".config/dunst".source = mkConfig "dunst";
     ".config/starship.toml".source = mkConfig "starship/config.toml";
     ".config/neofetch".source = mkConfig "neofetch";
     ".config/btop".source = mkConfig "btop";

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    libgcc
-    clang-tools
+    nixfmt-rfc-style
+    nixd
   ];
 }

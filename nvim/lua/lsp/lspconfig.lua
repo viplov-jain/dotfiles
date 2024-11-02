@@ -19,6 +19,7 @@ local servers = {
   pyright = {},
   ruff = {},
   ts_ls = {},
+  nixd = {},
 }
 
 for server, settings in pairs(servers) do
