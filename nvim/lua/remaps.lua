@@ -21,10 +21,10 @@ M.global_maps = {
   { '<C-j>', ":m '>+1<CR>gv=gv", desc = 'Move selected lines down', mode = 'v' },
   { '<C-j>', ':m .+1<cr>==', desc = 'Move selected lines down' },
   -- Bufferline controls
-  { '<A-n>', '<Cmd>enew<CR>', desc = 'New buffer', mode = niv },
-  { '<A-l>', '<Cmd>bnext<CR>', desc = 'Next buffer', mode = niv },
-  { '<A-h>', '<Cmd>bprevious<CR>', desc = 'Previous buffer', mode = niv },
-  { '<A-q>', '<Cmd>bd<CR>', desc = 'Close buffer', mode = niv },
+  { '<C-n>', '<Cmd>enew<CR>', desc = 'New buffer', mode = niv },
+  { '<C-l>', '<Cmd>bnext<CR>', desc = 'Next buffer', mode = niv },
+  { '<C-h>', '<Cmd>bprevious<CR>', desc = 'Previous buffer', mode = niv },
+  { '<C-q>', '<Cmd>bd<CR>', desc = 'Close buffer', mode = niv },
 
   -- Indent/Unindent with Tab/Shift+Tab
   { '<Tab>', '>>', desc = 'Indent', mode = nv },
