@@ -12,6 +12,11 @@
         font = "Hack Nerd Font";
         frame_color = "#89b4fa";
         separator_color = "frame";
+        corner_radius = 5;
+
+        separator_height = 2;
+        padding = 8;
+        horizontal_padding = 8;
       };
 
       urgency_low = {
