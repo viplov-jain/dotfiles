@@ -9,7 +9,6 @@ local function lsp_status()
   end
   return 'No Active LSP'
 end
-
 return {
   options = {
     component_separators = '',
@@ -19,11 +18,12 @@ return {
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'filename' },
+    lualine_b = { { 'filename', path = 1 }, 'searchcount' },
     lualine_c = { '%=', lsp_status },
 
-    lualine_x = { 'branch' },
-    lualine_y = { 'diff' },
+    lualine_x = { 'diagnostics' },
+    lualine_y = { 'branch', 'diff' },
     lualine_z = { 'location' },
   },
+  extensions = { 'nvim-tree', 'lazy', 'nvim-dap-ui', 'oil', 'toggleterm', 'trouble' },
 }
