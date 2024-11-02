@@ -100,12 +100,7 @@ return {
       require 'opts.treesitter'
     end,
   },
-  {
-    'f-person/git-blame.nvim',
-    event = 'VeryLazy',
-    opts = require 'opts.git-blame',
-  },
-  { 'lewis6991/gitsigns.nvim', opts = {} },
+  { 'lewis6991/gitsigns.nvim', opts = { current_line_blame = true } },
   { 'stevearc/oil.nvim', opts = {} },
   { 'akinsho/toggleterm.nvim', opts = {} },
   'folke/which-key.nvim',
