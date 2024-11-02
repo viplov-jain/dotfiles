@@ -69,11 +69,7 @@ return {
       require('nvim-tree').setup()
     end,
   },
-  {
-    -- Terminal
-    'akinsho/toggleterm.nvim',
-    opts = {},
-  },
+
   {
     -- LSP
     'neovim/nvim-lspconfig',
@@ -107,6 +103,8 @@ return {
     end,
   },
   { 'lewis6991/gitsigns.nvim', opts = {} },
+  { 'stevearc/oil.nvim', opts = {} },
+  { 'akinsho/toggleterm.nvim', opts = {} },
   'folke/which-key.nvim',
   'tpope/vim-fugitive',
   'tpope/vim-surround',

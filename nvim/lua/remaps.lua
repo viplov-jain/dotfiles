@@ -26,6 +26,12 @@ M.global_maps = {
   { '<C-h>', '<Cmd>bprevious<CR>', desc = 'Previous buffer', mode = niv },
   { '<C-q>', '<Cmd>bd<CR>', desc = 'Close buffer', mode = niv },
 
+  -- Toggleterm
+  { '<C-`>', '<Cmd>ToggleTerm<CR>', desc = 'Toggle terminal', mode = niv },
+
+  -- Oil
+  { '<leader>o', '<Cmd>Oil<CR>', desc = 'Open Oil' },
+
   -- Indent/Unindent with Tab/Shift+Tab
   { '<Tab>', '>>', desc = 'Indent', mode = nv },
   { '<S-Tab>', '<<', desc = 'Unindent', mode = nv },
