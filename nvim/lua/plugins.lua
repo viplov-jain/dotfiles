@@ -74,7 +74,6 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       { 'j-hui/fidget.nvim', opts = {} },
-      { 'nvimdev/lspsaga.nvim', opts = {} },
     },
     config = function()
       require 'lsp.lspattach'

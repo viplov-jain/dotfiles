@@ -102,25 +102,22 @@ M.lsp_remaps = function(event)
     mode = mode or 'n'
     vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
   end
-
   -- Jump to the definition of the word under your cursor.
   --  This is where a variable was first declared, or where a function is defined, etc.
   --  To jump back, press <C-t>.
-  map('gd', '<Cmd>Lspsaga goto_definition<CR>', '[G]oto [D]efinition')
-  map('ggd', '<Cmd>Lspsaga peek_definition<CR>', 'Peek [D]efinition')
   map('<leader>e', function()
     vim.diagnostic.open_float(0, { scope = 'cursor' })
   end, 'Floating [E]rror')
   map('<leader>E', vim.diagnostic.open_float, 'Floating [E]rror')
-  map('<leader>k', '<Cmd>Lspsaga hover_doc<CR>', 'Hover doc')
-  map('<leader>lf', '<Cmd>Lspsaga finder<CR>', '[L]sp [F]ind')
+  map('<leader>k', vim.lsp.buf.hover, 'Hover doc')
 
-  map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-  map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+  map('gd', telescope.lsp_definitions, '[G]oto [D]efinition')
+  map('gr', telescope.lsp_references, '[G]oto [R]eferences')
+  map('gI', telescope.lsp_implementations, '[G]oto [I]mplementation')
   map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-  map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-  map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-  map('<leader>rn', '<Cmd>Lspsaga rename<CR>', '[R]e[n]ame')
+  map('<leader>ds', telescope.lsp_document_symbols, '[D]ocument [S]ymbols')
+  map('<leader>ws', telescope.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
 
   -- The following code creates a keymap to toggle inlay hints in your
