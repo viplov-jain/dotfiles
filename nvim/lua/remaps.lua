@@ -92,9 +92,7 @@ M.global_maps = {
     end,
     desc = '[D]iff ~',
   },
-
-  -- Git blame
-  { '<leader>bb', '<Cmd>Git blame<CR>', desc = 'Git [B]lame' },
+  { '<leader>bb', gitsigns.blame, desc = 'Git [B]lame' },
 
   -- Text object
   { 'ih', ':<C-U>Gitsigns select_hunk<CR>', desc = '[H]unk text object', mode = { 'o', 'x' } },

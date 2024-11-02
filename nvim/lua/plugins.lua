@@ -105,7 +105,6 @@ return {
   { 'akinsho/toggleterm.nvim', opts = {} },
   'folke/which-key.nvim',
   'kosayoda/nvim-lightbulb',
-  'tpope/vim-fugitive',
   'tpope/vim-surround',
   'wellle/targets.vim',
   'folke/zen-mode.nvim',
