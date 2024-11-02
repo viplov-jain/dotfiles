@@ -19,7 +19,6 @@ return {
   {
     -- Autocomplete
     'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'L3MON4D3/LuaSnip',
@@ -108,7 +107,6 @@ return {
   'folke/which-key.nvim',
   'tpope/vim-fugitive',
   'tpope/vim-surround',
-  'tpope/vim-sensible',
   'wellle/targets.vim',
   'folke/zen-mode.nvim',
 }

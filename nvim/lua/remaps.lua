@@ -108,7 +108,10 @@ M.lsp_remaps = function(event)
   --  To jump back, press <C-t>.
   map('gd', '<Cmd>Lspsaga goto_definition<CR>', '[G]oto [D]efinition')
   map('ggd', '<Cmd>Lspsaga peek_definition<CR>', 'Peek [D]efinition')
-  map('<leader>e', vim.diagnostic.open_float, 'Floating [E]rror')
+  map('<leader>e', function()
+    vim.diagnostic.open_float(0, { scope = 'cursor' })
+  end, 'Floating [E]rror')
+  map('<leader>E', vim.diagnostic.open_float, 'Floating [E]rror')
   map('<leader>k', '<Cmd>Lspsaga hover_doc<CR>', 'Hover doc')
   map('<leader>lf', '<Cmd>Lspsaga finder<CR>', '[L]sp [F]ind')
 
