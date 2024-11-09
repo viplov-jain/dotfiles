@@ -18,6 +18,8 @@ in
     ./lang/python.nix
     ./lang/lua.nix
     ./lang/nix.nix
+    ./lang/typescript.nix
+    ./lang/nvim.nix
 
     ./notifications/dunst.nix
   ];
@@ -30,7 +32,6 @@ in
     gnumake
 
     rustup
-    nodejs_22
 
     # Utils
     xdg-utils
