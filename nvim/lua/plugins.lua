@@ -112,6 +112,15 @@ return {
     end,
     ft = { 'markdown' },
   },
+  {
+    'norcalli/nvim-colorizer.lua',
+    opts = {
+      css = {},
+      javascript = {},
+      html = {},
+      toml = {},
+    },
+  },
   'folke/which-key.nvim',
   'kosayoda/nvim-lightbulb',
   'tpope/vim-surround',
