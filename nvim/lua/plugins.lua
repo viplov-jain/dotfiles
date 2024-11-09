@@ -103,6 +103,14 @@ return {
   { 'lewis6991/gitsigns.nvim', opts = { current_line_blame = true } },
   { 'stevearc/oil.nvim', opts = {} },
   { 'akinsho/toggleterm.nvim', opts = {} },
+  {
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    ft = { 'markdown' },
+    build = function()
+      vim.fn['mkdp#util#install']()
+    end,
+  },
   'folke/which-key.nvim',
   'kosayoda/nvim-lightbulb',
   'tpope/vim-surround',
