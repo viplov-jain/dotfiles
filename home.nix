@@ -19,7 +19,7 @@ in
     ./lang/lua.nix
     ./lang/nix.nix
     ./lang/typescript.nix
-    ./lang/nvim.nix
+    ./lang/config_files.nix
 
     ./notifications/dunst.nix
   ];
