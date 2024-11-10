@@ -1,4 +1,6 @@
-# shellcheck source=.zshrc
+autoload -Uz compinit
+compinit
+
 source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 eval "$(starship init zsh)"
 source <(fzf --zsh)
