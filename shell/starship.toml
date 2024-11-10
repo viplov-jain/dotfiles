@@ -25,6 +25,9 @@ symbol = ""
 success_symbol = "[ ❯](sky)"
 error_symbol = "[ ❯](red)"
 
+[fill]
+symbol = ' '
+
 [hostname]
 ssh_only = true
 format = "[](fg: bg:none)[█](fg:rosewater bg:base)[$ssh_symbol$hostname](bold bg:rosewater)[](fg:rosewater bg:none) "
