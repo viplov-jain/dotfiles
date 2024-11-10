@@ -10,6 +10,6 @@
   };
 
   home.sessionVariables = {
-    STARSHIP_CONFIG = builtins.toPath ./starship.toml;
+    STARSHIP_CONFIG = ./starship.toml;
   };
 }

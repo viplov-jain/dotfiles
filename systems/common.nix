@@ -10,6 +10,7 @@
     ../lang/config_files.nix
 
     ../shell/shell.nix
+    ../git/git.nix
   ];
   home.packages = with pkgs; [
     gnumake
@@ -52,11 +53,7 @@
     youtube-music
     vlc
 
-    # Source control
-    gh
-    git
-    delta
-    lazygit
+    docker_27
   ];
   home.file = {
     ".gitconfig".source = ../.gitconfig;
