@@ -8,8 +8,6 @@
   home.packages = with pkgs; [
     qemu
 
-    libgcc
-
     # Utils
     xdg-utils
     socat

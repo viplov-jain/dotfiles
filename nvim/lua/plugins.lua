@@ -113,13 +113,10 @@ return {
     ft = { 'markdown' },
   },
   {
-    'norcalli/nvim-colorizer.lua',
-    opts = {
-      css = {},
-      javascript = {},
-      html = {},
-      toml = {},
-    },
+    'NvChad/nvim-colorizer.lua',
+    config = function()
+      require 'opts.colorizer'
+    end,
   },
   'folke/which-key.nvim',
   'kosayoda/nvim-lightbulb',
