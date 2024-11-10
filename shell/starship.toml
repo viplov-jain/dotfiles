@@ -28,6 +28,9 @@ error_symbol = "[ ❯](red)"
 [fill]
 symbol = ' '
 
+[cmd_duration]
+show_milliseconds = true
+
 [hostname]
 ssh_only = true
 format = "[](fg: bg:none)[█](fg:rosewater bg:base)[$ssh_symbol$hostname](bold bg:rosewater)[](fg:rosewater bg:none) "
