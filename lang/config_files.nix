@@ -10,5 +10,8 @@
     # JSON
     nodePackages.jsonlint
     jsonnet
+
+    # Markdown
+    vale
   ];
 }
