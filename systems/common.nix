@@ -40,7 +40,6 @@
     btop
     fastfetch
     ripgrep
-    eza
 
     # Media
     youtube-music

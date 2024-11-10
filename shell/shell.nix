@@ -9,6 +9,9 @@
     fzf
     fd
     yazi-unwrapped
+
+    eza
+    zoxide
   ];
 
   home.file = {

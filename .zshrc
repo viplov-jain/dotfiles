@@ -11,6 +11,7 @@ if [ -f ~/.zsh_aliases ]; then
 fi
 
 eval "$(starship init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 source <(fzf --zsh)
 
 ZINIT_HOME="${HOME}/.local/share/zinit/zinit.git"
