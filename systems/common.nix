@@ -15,9 +15,6 @@
   home.packages = with pkgs; [
     gnumake
     killall
-    fzf
-    fd
-    yazi-unwrapped
     zip
     unzip
     gzip
@@ -51,7 +48,6 @@
   ];
   home.file = {
     ".gitconfig".source = ../.gitconfig;
-    ".zshrc".source = ../.zshrc;
     ".config/nvim".source = ../nvim;
   };
 }

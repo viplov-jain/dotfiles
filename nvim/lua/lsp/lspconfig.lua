@@ -20,6 +20,9 @@ local servers = {
   ruff = {},
   ts_ls = {},
   nixd = {},
+  bashls = {
+    filetypes = { 'sh', 'zsh', 'bash' },
+  },
 }
 
 for server, settings in pairs(servers) do

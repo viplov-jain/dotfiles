@@ -1,12 +1,19 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    shfmt
+    nodePackages.bash-language-server
+
     kitty
     starship
+    fzf
+    fd
+    yazi-unwrapped
   ];
 
   home.file = {
     ".config/kitty/kitty.conf".source = ./kitty.conf;
+    ".zshrc".source = ../.zshrc;
   };
 
   home.sessionVariables = {
