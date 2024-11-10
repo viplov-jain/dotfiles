@@ -36,11 +36,6 @@
     })
     monaspace
 
-    # Browsers
-    firefox
-    librewolf
-    ungoogled-chromium
-
     # Cmds
     wget
     curl
@@ -51,7 +46,6 @@
 
     # Media
     youtube-music
-    vlc
 
     docker_27
   ];

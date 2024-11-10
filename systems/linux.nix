@@ -8,6 +8,8 @@
   home.packages = with pkgs; [
     qemu
 
+    libgcc
+
     # Utils
     xdg-utils
     socat
@@ -29,6 +31,13 @@
     cava
     waybar
     eww
+
+    # Browsers
+    firefox
+    librewolf
+    ungoogled-chromium
+
+    vlc
   ];
 
   home.file = {
