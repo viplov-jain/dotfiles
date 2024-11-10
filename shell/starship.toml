@@ -28,9 +28,6 @@ error_symbol = "[ ❯](red)"
 [fill]
 symbol = ' '
 
-[cmd_duration]
-show_milliseconds = true
-
 [hostname]
 ssh_only = true
 format = "[](fg: bg:none)[█](fg:rosewater bg:base)[$ssh_symbol$hostname](bold bg:rosewater)[](fg:rosewater bg:none) "
@@ -44,7 +41,6 @@ truncate_to_repo = false
 read_only = " "
 
 [cmd_duration]
-min_time = 1
 format = "[](fg:base bg:none)[$duration]($style)[](fg:base bg:base)[](fg:mauve bg:base)[󱑂](fg:base bg:mauve)[](fg:mauve bg:none)"
 disabled = false
 style = "fg:text bg:base bold"
