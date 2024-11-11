@@ -5,13 +5,18 @@
     nodePackages.bash-language-server
 
     kitty
+
     starship
+    fastfetch
+    ripgrep
+    btop
     fzf
     fd
     yazi-unwrapped
 
-    eza
-    zoxide
+    eza # ls
+    zoxide # cd
+    bat # cat
   ];
 
   home.file = {

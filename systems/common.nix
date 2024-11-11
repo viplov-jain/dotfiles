@@ -37,9 +37,6 @@
     wget
     curl
     jq
-    btop
-    fastfetch
-    ripgrep
 
     # Media
     youtube-music
