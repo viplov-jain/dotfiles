@@ -2,6 +2,8 @@
 {
   home.packages = with pkgs; [
     nodejs_22
-    eslint
+    nodePackages.prettier
+    nodePackages.typescript-language-server
+    nodePackages.eslint
   ];
 }

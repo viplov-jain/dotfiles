@@ -59,6 +59,7 @@ return {
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
       'nvim-tree/nvim-web-devicons',
     },
+    opts = require 'opts.telescope',
   },
   {
     -- File tree
