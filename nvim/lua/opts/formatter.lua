@@ -10,7 +10,7 @@ return {
     javascript = { 'prettier' },
 
     nix = { 'nixfmt' },
-    json = { 'jsonnetfmt' },
+    json = { 'fixjson' },
     toml = { 'taplo' },
     yaml = { 'yamlfmt' },
 

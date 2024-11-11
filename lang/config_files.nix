@@ -9,7 +9,8 @@
 
     # JSON
     nodePackages.jsonlint
-    jsonnet
+    nodePackages.fixjson
+    gron
 
     # Markdown
     vale

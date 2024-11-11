@@ -10,4 +10,8 @@
   home.sessionVariables = {
     LG_CONFIG_FILE = ./lazygit.yml;
   };
+
+  home.file = {
+    ".gitconfig".source = ../.gitconfig;
+  };
 }

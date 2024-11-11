@@ -44,7 +44,6 @@
     docker_27
   ];
   home.file = {
-    ".gitconfig".source = ../.gitconfig;
     ".config/nvim".source = ../nvim;
   };
 }
