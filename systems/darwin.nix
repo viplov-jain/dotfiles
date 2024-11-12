@@ -8,6 +8,6 @@
     uv
     postgresql_16
     mongosh
-    circleci_cli
+    circleci-cli
   ];
 }
