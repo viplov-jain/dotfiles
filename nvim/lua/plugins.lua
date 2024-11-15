@@ -12,13 +12,14 @@ return {
   {
     -- Formatter
     'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
-    cmd = { 'ConformInfo' },
+    event = 'BufWritePre',
+    cmd = 'ConformInfo',
     opts = require 'opts.formatter',
   },
   {
     -- Autocomplete
     'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'L3MON4D3/LuaSnip',
@@ -39,6 +40,7 @@ return {
   {
     -- Bufferline
     'akinsho/bufferline.nvim',
+    event = 'VeryLazy',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
       require('bufferline').setup {
@@ -49,11 +51,13 @@ return {
   {
     -- Statusline
     'nvim-lualine/lualine.nvim',
+    event = 'VeryLazy',
     opts = require 'opts.lualine',
   },
   {
     -- Search
     'nvim-telescope/telescope.nvim',
+    event = 'VeryLazy',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
@@ -64,6 +68,7 @@ return {
   {
     -- File tree
     'nvim-tree/nvim-tree.lua',
+    cmd = { 'NvimTreeToggle', 'NvimTreeOpen' },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('nvim-tree').setup()
@@ -73,6 +78,7 @@ return {
   {
     -- LSP
     'neovim/nvim-lspconfig',
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       { 'j-hui/fidget.nvim', opts = {} },
     },
@@ -88,22 +94,16 @@ return {
     end,
   },
   {
-    -- Diagnostics
-    'folke/trouble.nvim',
-    cmd = 'Trouble',
-    opts = {},
-  },
-  {
     -- Treesitter
     'nvim-treesitter/nvim-treesitter',
+    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
     build = ':TSUpdate',
     config = function()
       require 'opts.treesitter'
     end,
   },
-  { 'lewis6991/gitsigns.nvim', opts = { current_line_blame = true } },
-  { 'stevearc/oil.nvim', opts = {} },
-  { 'akinsho/toggleterm.nvim', opts = {} },
+  { 'lewis6991/gitsigns.nvim', event = 'VeryLazy', opts = { current_line_blame = true } },
+  { 'stevearc/oil.nvim', cmd = 'Oil', opts = {} },
   {
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },

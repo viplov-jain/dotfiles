@@ -5,6 +5,7 @@
     neovim-unwrapped
   ];
   home.file = {
+    ".vimrc".source = ./settings.vim;
     ".config/nvim".source = ./.;
   };
 }
