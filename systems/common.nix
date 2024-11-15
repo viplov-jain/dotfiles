@@ -11,6 +11,7 @@
 
     ../shell/shell.nix
     ../git/git.nix
+    ../nvim/nvim.nix
   ];
   home.packages = with pkgs; [
     gnumake
@@ -19,10 +20,6 @@
     unzip
     gzip
     gnutar
-
-    # Editors
-    vim
-    neovim-unwrapped
 
     # Fonts and themes
     (nerdfonts.override {
@@ -43,7 +40,4 @@
 
     docker_27
   ];
-  home.file = {
-    ".config/nvim".source = ../nvim;
-  };
 }

@@ -19,7 +19,6 @@ vim.g.have_nerd_font = true
 -- Display Settings
 vim.opt.cursorline = true
 vim.opt.expandtab = true
-vim.opt.mouse = 'a'
 vim.opt.showcmd = true
 vim.opt.timeoutlen = 300
 vim.opt.wildmenu = true

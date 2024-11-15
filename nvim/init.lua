@@ -1,4 +1,4 @@
-require 'settings'
+vim.cmd [[source $HOME/.config/nvim/settings.vim]]
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim' -- Lazy bootstrap starts here
 if not vim.loop.fs_stat(lazypath) then
