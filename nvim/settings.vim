@@ -38,3 +38,19 @@ set noshowmode
 set mouse=a
 set mousemodel=extend
 
+if has('nvim')
+    finish
+endif
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'preservim/nerdtree'
+call plug#end()
+
+colorscheme catppuccin_mocha
+nnoremap <leader>n :NERDTreeToggle<CR>
