@@ -15,7 +15,6 @@
   :geometry (geometry :x "0%" :y "0%" :width "0" :height "0" :anchor "center")
   :stacking "fg"
   :exclusive false
-  :style "background-color: red;"
   (widgetbox)
 )
 

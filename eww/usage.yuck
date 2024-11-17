@@ -16,12 +16,12 @@
 
 (defwidget usage_bar [scale label value ?flip]
   (box :orientation "v" :space-evenly false :halign "center"
-  (label :style "margin: 10px;" :halign "center" :text {round(value, 1)})
+  (label :style "margin: 5px;" :halign "center" :text {round(value, 1)})
   (usage-scale 
     :v {flip != "" ? 1 - (value*scale) / 100 : (value*scale) / 100}
     :value {value*scale}
   )
-  (label :style "margin: 10px;" :halign "center" :text {label})
+  (label :style "margin: 5px;" :halign "center" :text {label})
   )
 )
 

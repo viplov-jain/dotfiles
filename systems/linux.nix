@@ -16,7 +16,7 @@
 
     papirus-icon-theme
     # File explorer
-    xfce.thunar
+    gnome.nautilus
 
     # Hyprland
     hyprpaper

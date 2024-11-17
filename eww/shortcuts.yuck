@@ -19,7 +19,7 @@
 )
 
 (defwidget shortcut-dir [dir overlay]
-  (shortcut-button :onclick "thunar ${dir} &" :color "rgb(125, 125, 48)" :icon "folder.png" :overlay {overlay})
+  (shortcut-button :onclick "nautilus ${dir} &" :color "rgb(125, 125, 48)" :icon "folder.png" :overlay {overlay})
 )
 
 (defwidget shortcuts []
