@@ -2,7 +2,7 @@
 {
 
   imports = [
-    ./btop/btop.nix
+    ./btop
   ];
   home.packages = with pkgs; [
     shfmt

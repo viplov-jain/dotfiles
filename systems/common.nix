@@ -9,9 +9,9 @@
     ../lang/typescript.nix
     ../lang/config_files.nix
 
-    ../shell/shell.nix
-    ../git/git.nix
-    ../nvim/nvim.nix
+    ../shell
+    ../git
+    ../nvim
   ];
   home.packages = with pkgs; [
     gnumake
