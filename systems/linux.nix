@@ -16,7 +16,7 @@
 
     papirus-icon-theme
     # File explorer
-    gnome.nautilus
+    nautilus
 
     # Hyprland
     hyprpaper
@@ -42,6 +42,5 @@
     ".config/hypr".source = ../hypr;
     ".config/eww".source = ../eww;
     ".config/waybar".source = ../waybar;
-    ".config/btop".source = ../btop;
   };
 }

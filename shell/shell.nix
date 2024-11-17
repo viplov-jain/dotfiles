@@ -1,5 +1,9 @@
 { pkgs, config, ... }:
 {
+
+  imports = [
+    ./btop/btop.nix
+  ];
   home.packages = with pkgs; [
     shfmt
     nodePackages.bash-language-server
@@ -10,7 +14,6 @@
     starship
     fastfetch
     ripgrep
-    btop
     fzf
     fd
     yazi-unwrapped
