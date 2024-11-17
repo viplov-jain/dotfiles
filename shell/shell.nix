@@ -4,6 +4,7 @@
     shfmt
     nodePackages.bash-language-server
 
+    fish
     kitty
 
     starship
