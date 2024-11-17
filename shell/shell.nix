@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.packages = with pkgs; [
     shfmt
@@ -20,11 +20,9 @@
   ];
 
   home.file = {
+    ".config/starship.toml".source = ./starship.toml;
     ".config/kitty/kitty.conf".source = ./kitty.conf;
-    ".zshrc".source = ../.zshrc;
+    ".config/fish".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/shell/fish";
   };
 
-  home.sessionVariables = {
-    STARSHIP_CONFIG = ./starship.toml;
-  };
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.packages = with pkgs; [
     vim
@@ -6,6 +6,6 @@
   ];
   home.file = {
     ".vimrc".source = ./settings.vim;
-    ".config/nvim".source = ./.;
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
   };
 }

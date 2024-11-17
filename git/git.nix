@@ -7,11 +7,8 @@
     lazygit
   ];
 
-  home.sessionVariables = {
-    LG_CONFIG_FILE = ./lazygit.yml;
-  };
-
   home.file = {
     ".gitconfig".source = ../.gitconfig;
+    ".config/lazygit/config.yml".source = ./lazygit.yml;
   };
 }
