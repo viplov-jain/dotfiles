@@ -3,6 +3,7 @@
   imports = [
     ./common.nix
     ../notifications/dunst.nix
+    ../eww
   ];
 
   home.packages = with pkgs; [
@@ -28,7 +29,6 @@
     # GUI
     cava
     waybar
-    eww
 
     # Browsers
     firefox
@@ -40,7 +40,6 @@
 
   home.file = {
     ".config/hypr".source = ../hypr;
-    ".config/eww".source = ../eww;
     ".config/waybar".source = ../waybar;
   };
 }
