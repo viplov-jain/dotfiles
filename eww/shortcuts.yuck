@@ -46,7 +46,7 @@
   
     (box :orientation "h" :halign "fill"
     (shortcut-dir :dir "~/Downloads" :overlay "download")
-    (shortcut-dir :dir "~/projects" :overlay "github")
+    (shortcut-dir :dir "~/dotfiles" :overlay "github")
     (shortcut-dir :dir "~/Dropbox" :overlay "dropbox")
     (shortcut-dir :dir "~/Videos" :overlay "video")
     (shortcut-dir :dir "~/Dpcuments" :overlay "doc")

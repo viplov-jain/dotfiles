@@ -32,7 +32,7 @@
       )
       (box :orientation "h" :space-evenly false
         (box :style "margin: 4px;" :width 300 :height 300 (usage))
-        (box :width 700 :height 300 (shortcuts))
+        (box :style "margin: 4px;" :width 700 :height 300 (shortcuts))
       )
     )
   )

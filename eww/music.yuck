@@ -6,7 +6,6 @@
 
 (defwidget music []
   (box :orientation "v" :halign "fill" :class "music"
-    :style "background-image: linear-gradient(black, rgb(16, 26, 16));"
     (box :orientation "h" :space-evenly false
       (box :orientation "v" :space-evenly false
         (image :path "${replace(MUSIC.url, 'file://', '')}"
