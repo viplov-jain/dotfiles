@@ -17,7 +17,7 @@
 
     papirus-icon-theme
     # File explorer
-    nautilus
+    # nautilus
 
     # Hyprland
     hyprpaper
