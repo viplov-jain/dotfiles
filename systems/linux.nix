@@ -17,7 +17,7 @@
 
     papirus-icon-theme
     # File explorer
-    # nautilus
+    nautilus
 
     # Hyprland
     hyprpaper
@@ -27,7 +27,6 @@
     wl-clipboard
 
     # GUI
-    cava
     waybar
 
     # Browsers

@@ -22,12 +22,9 @@
     gnutar
 
     # Fonts and themes
-    (nerdfonts.override {
-      fonts = [
-        "Hack"
-        "FiraCode"
-      ];
-    })
+    nerd-fonts.hack
+    nerd-fonts.fira-mono
+    nerd-fonts.fira-code
     monaspace
 
     # Cmds
