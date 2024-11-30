@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    nodejs_22
+    nodejs_23
     nodePackages.prettier
     nodePackages.typescript-language-server
     nodePackages.eslint
