@@ -10,7 +10,9 @@
 
     fish
     kitty
+    alacritty
 
+    tmux
     starship
     fastfetch
     ripgrep
