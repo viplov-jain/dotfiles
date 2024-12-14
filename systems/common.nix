@@ -20,6 +20,7 @@
     unzip
     gzip
     gnutar
+    xz
     tealdeer
 
     # Fonts and themes
