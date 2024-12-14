@@ -8,4 +8,5 @@ if status is-interactive
     if test -e /nix/var/nix/profiles/default/bin
         export PATH="$PATH:/nix/var/nix/profiles/default/bin"
     end
+    export MANPAGER='nvim +Man!'
 end

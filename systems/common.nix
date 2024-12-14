@@ -20,6 +20,7 @@
     unzip
     gzip
     gnutar
+    tealdeer
 
     # Fonts and themes
     nerd-fonts.hack
