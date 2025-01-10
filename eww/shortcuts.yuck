@@ -40,7 +40,7 @@
       (shortcut-button :onclick "vlc&" :color "rgb(82, 61, 38)":icon "vlc.svg") ; VLC
       (shortcut-button :onclick "obsidian &" :color "black" :icon "obsidian.png") ; Penpot
       (shortcut-button :onclick "killall .waybar-wrapped; waybar&" :color "black":icon "update.svg") ; Update
-      (shortcut-button :onclick "chromium&" :color "rgb(30, 59, 132)":icon "chromium.svg") ; Chromium
+      (shortcut-button :onclick "brave&" :color "rgb(30, 59, 132)":icon "chromium.svg") ; Chromium
       (shortcut-button :onclick "xdg-open http://reddit.com" :color "rgb(255, 87, 0)":icon "reddit.svg") ; Reddit
     )
   

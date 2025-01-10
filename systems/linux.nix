@@ -33,6 +33,7 @@
     firefox
     librewolf
     ungoogled-chromium
+    brave
 
     vlc
   ];
