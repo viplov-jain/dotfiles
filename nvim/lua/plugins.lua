@@ -105,15 +105,6 @@ return {
   { 'lewis6991/gitsigns.nvim', event = 'VeryLazy', opts = { current_line_blame = true } },
   { 'stevearc/oil.nvim', cmd = 'Oil', opts = {} },
   {
-    'iamcco/markdown-preview.nvim',
-    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    build = 'cd app && npm install',
-    init = function()
-      vim.g.mkdp_filetypes = { 'markdown' }
-    end,
-    ft = { 'markdown' },
-  },
-  {
     'NvChad/nvim-colorizer.lua',
     config = function()
       require 'opts.colorizer'
