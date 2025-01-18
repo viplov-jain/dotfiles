@@ -1,4 +1,8 @@
-import json, time, requests, os
+import json
+import os
+import time
+
+import requests
 
 with open(os.path.expanduser("~/.secrets.json")) as f:
     data = json.load(f)
@@ -21,7 +25,7 @@ def get_data(condition):
     icon = icon[icon.rfind("/") + 1 :]
     return {
         "temp": condition["temp_c"],
-        "condition": condition["condition"]["text"],
+        "condition": condition["condition"]["text"].strip(),
         "icon": f"images/weather/64x64/{day}/{icon}",
         "time": condition.get("time_epoch"),
     }
