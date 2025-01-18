@@ -18,6 +18,7 @@
     papirus-icon-theme
     # File explorer
     nautilus
+    dolphin
 
     # Hyprland
     hyprpaper
@@ -36,6 +37,7 @@
     brave
 
     vlc
+    geeqie
   ];
 
   home.file = {
