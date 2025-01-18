@@ -35,3 +35,12 @@ label {
     -gtk-icon-effect: none;
     -gtk-icon-transform: scale(1.05);
 }
+
+.musicslider {
+  contents trough {
+    margin-right: 12px; 
+    min-height: 6px;
+    background-color: $overlay0;
+    highlight {background-color: $blue;}
+  }
+}

@@ -48,8 +48,8 @@
         )
         (box :orientation "h" :space-evenly false
           (scale
+            :class "musicslider"
             :width 260
-            :css "contents trough {margin-right: 12px; min-height: 6px;}"
             :min 0 :max {MUSIC.length / 1000000}
             :value {POSITION}
             :onchange "playerctl -p chromium position {}"
