@@ -4,7 +4,7 @@
   (box :orientation "v" 
     :space-evenly false
     (label :text "${formattime(WEATHER.forecast_h[c].time, '%H')}:00")
-    (image :path "${WEATHER.forecast_h[c].icon}" :image-width 38 :image-height 38 :tooltip "${WEATHER.forecast_h[c].condition}")
+    (image :path "${WEATHER.forecast_h[c].icon}" :image-width 48 :image-height 48 :tooltip "${WEATHER.forecast_h[c].condition}")
     (label :text "${WEATHER.forecast_h[c].temp} C")
   )
 )
