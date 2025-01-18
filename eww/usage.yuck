@@ -26,8 +26,7 @@
 )
 
 (defwidget usage []
-  (box :orientation "h" 
-    :style "background-image: linear-gradient(0deg, black, rgb(8, 8, 100));"
+  (box :orientation "h" :class "basebox" 
     (usage_bar :scale 1 :value {EWW_BATTERY.BAT0.capacity} :label "BAT0" :flip true)
     (usage_bar :scale 1 :value {EWW_BATTERY.BAT1.capacity} :label "BAT1" :flip true)
     (usage_bar :scale 1 :value {EWW_RAM.used_mem_perc} :label "Mem")

@@ -5,7 +5,7 @@
 
 
 (defwidget music []
-  (box :orientation "v" :halign "fill" :class "music"
+  (box :orientation "v" :halign "fill" :class "basebox"
     (box :orientation "h" :space-evenly false
       (box :orientation "v" :space-evenly false
         (image :path "${replace(MUSIC.url, 'file://', '')}"

@@ -20,20 +20,18 @@
 
 
 (defwidget widgetbox []
-  (box :orientation "h" :space-evenly false
-    (box :orientation "v" :space-evently false
-      (box :orientation "h" :space-evenly false
-        (box :style "margin: 4px;" :width 200 :height 300 (userinfo))
-        (box :style "margin: 4px;" :width 800 :height 300 (weather))
-      )
-      (box :orientation "h" :space-evenly false
-        (box :style "margin: 4px;" :width 400 :height 300 (stocks))
-        (box :style "margin: 4px;" :width 600 :height 300 (music))
-      )
-      (box :orientation "h" :space-evenly false
-        (box :style "margin: 4px;" :width 300 :height 300 (usage))
-        (box :style "margin: 4px;" :width 700 :height 300 (shortcuts))
-      )
+  (box :orientation "v" :space-evently false
+    (box :orientation "h" :space-evenly false
+      (box :style "margin: 4px;" :width 200 :height 300 (userinfo))
+      (box :style "margin: 4px;" :width 800 :height 300 (weather))
+    )
+    (box :orientation "h" :space-evenly false
+      (box :style "margin: 4px;" :width 400 :height 300 (stocks))
+      (box :style "margin: 4px;" :width 600 :height 300 (music))
+    )
+    (box :orientation "h" :space-evenly false
+      (box :style "margin: 4px;" :width 300 :height 300 (usage))
+      (box :style "margin: 4px;" :width 700 :height 300 (shortcuts))
     )
   )
 )

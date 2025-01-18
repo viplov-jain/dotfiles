@@ -1,24 +1,29 @@
-@import "colors.scss";
+@import "./colors.scss";
 
 * {
     all: unset;
     font-family: Hack Nerd Font;
-    color: $text0;
     border-radius: 10px;
 }
 
-tooltip {
-    background-color: $surface1;
+.basebox {
+  background-image: linear-gradient($crust, $base),
 }
 
-contents trough {
-    background-color: $surface2; 
-    highlight {background-color: $subtext1;}
+label {
+  color: $text;
 }
 
-.music {
-  color: transparent;
-  background-color: red;
+.sublabel {
+  color: $subtext0;
+}
+
+.greentext {
+  color: $green;
+}
+
+.redtext {
+  color: $red;
 }
 
 .musicbutton image {

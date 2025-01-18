@@ -2,8 +2,7 @@
 (defpoll USERNAME :interval "1h" `whoami`)
 
 (defwidget userinfo []
-    (box :orientation "v" :space-evenly false
-        :style "background-image: linear-gradient(rgb(0, 198, 255), rgb(23, 23, 80));"
+    (box :orientation "v" :space-evenly false :class "basebox"
         (image :path "images/user-image.svg" 
             :image-width 150 :image-height 150
             :style "margin: 20px;"
