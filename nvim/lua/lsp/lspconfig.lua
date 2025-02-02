@@ -19,6 +19,7 @@ local servers = {
   pyright = {},
   ruff = {},
   ts_ls = {},
+  eslint = {},
   nixd = {},
   bashls = {
     filetypes = { 'sh', 'zsh', 'bash' },

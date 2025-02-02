@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.packages = with pkgs; [
     gh
@@ -8,7 +8,7 @@
   ];
 
   home.file = {
-    ".gitconfig".source = ../.gitconfig;
+    ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/git/.gitconfig";
     ".config/lazygit/config.yml".source = ./lazygit.yml;
   };
 }

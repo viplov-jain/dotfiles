@@ -27,6 +27,7 @@
     nerd-fonts.hack
     nerd-fonts.fira-mono
     nerd-fonts.fira-code
+    nerd-fonts.dejavu-sans-mono
     monaspace
 
     # Cmds

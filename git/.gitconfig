@@ -15,7 +15,7 @@
   up = checkout
   pu = push origin HEAD
   unstage = reset HEAD --
-  uncommit = reset --soft HEAD
+  uncommit = reset --soft HEAD^
   amend = !git add --all && git commit --amend --no-edit
   purge = clean -fd
   pick = cherry-pick

@@ -1,8 +1,6 @@
 require('lint').linters_by_ft = {
   markdown = { 'vale' },
   python = { 'mypy' },
-  typescript = { 'eslint' },
-  typescriptreact = { 'eslint' },
   json = { 'jsonlint' },
   yaml = { 'yamllint' },
 }
