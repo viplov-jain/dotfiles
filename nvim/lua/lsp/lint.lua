@@ -1,6 +1,6 @@
 require('lint').linters_by_ft = {
   markdown = { 'vale' },
-  python = { 'mypy' },
+  python = { 'dmypy' },
   json = { 'jsonlint' },
   yaml = { 'yamllint' },
 }

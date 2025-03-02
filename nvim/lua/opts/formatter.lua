@@ -8,11 +8,11 @@ return {
     typescript = { 'prettier' },
     typescriptreact = { 'prettier' },
     javascript = { 'prettier' },
+    json = { 'prettier' },
+    yaml = { 'prettier' },
 
     nix = { 'nixfmt' },
-    json = { 'fixjson' },
     toml = { 'taplo' },
-    yaml = { 'yamlfmt' },
 
     sh = { 'shfmt' },
     zsh = { 'shfmt' },

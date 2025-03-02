@@ -19,7 +19,7 @@ local servers = {
   pyright = {},
   ruff = {},
   ts_ls = {},
-  eslint = {},
+  oxlint = { cmd = { vim.fn.expand '$HOME/.bun/bin/oxc_language_server' } },
   nixd = {},
   bashls = {
     filetypes = { 'sh', 'zsh', 'bash' },

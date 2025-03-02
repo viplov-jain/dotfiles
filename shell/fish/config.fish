@@ -9,7 +9,6 @@ if status is-interactive
     if test -e /nix/var/nix/profiles/default/bin
         export PATH="$PATH:/nix/var/nix/profiles/default/bin"
     end
-    if test -e ~/.local/bin/env.fish 
-        source ~/.local/bin/env.fish
-    end
+    export PATH="$PATH:$HOME/.local/bin"
+    export PATH="$PATH:$HOME/.bun/bin"
 end

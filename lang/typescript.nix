@@ -5,6 +5,5 @@
     vscode-langservers-extracted
     nodePackages.prettier
     nodePackages.typescript-language-server
-    nodePackages.eslint
   ];
 }
