@@ -9,8 +9,6 @@
     nodePackages.bash-language-server
 
     fish
-    kitty
-    alacritty
 
     tmux
     starship
@@ -28,7 +26,9 @@
   home.file = {
     ".config/starship.toml".source = ./starship.toml;
     ".config/kitty/kitty.conf".source = ./kitty.conf;
-    ".config/fish".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/shell/fish";
-    ".config/bat".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/shell/bat";
+    ".config/fish".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/shell/fish";
+    ".config/bat".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/shell/bat";
   };
 }

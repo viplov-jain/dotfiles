@@ -15,6 +15,7 @@
     (terraform.withPlugins (plugin: [ plugin.aws ]))
     postgresql_16
     mongosh
+    redis
     circleci-cli
   ];
 }

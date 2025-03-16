@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
 
-    (python3.withPackages (
+    (python313.withPackages (
       ps: with ps; [
         pip
         requests

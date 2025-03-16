@@ -18,7 +18,7 @@
     papirus-icon-theme
     # File explorer
     nautilus
-    dolphin
+    kdePackages.dolphin
 
     # Hyprland
     hyprpaper
@@ -38,6 +38,8 @@
 
     vlc
     geeqie
+
+    ghostty
   ];
 
   home.file = {

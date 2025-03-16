@@ -10,5 +10,4 @@ if status is-interactive
         export PATH="$PATH:/nix/var/nix/profiles/default/bin"
     end
     export PATH="$PATH:$HOME/.local/bin"
-    export PATH="$PATH:$HOME/.bun/bin"
 end
