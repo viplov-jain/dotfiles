@@ -66,14 +66,14 @@ return {
   },
   {
     -- File tree
-    'nvim-tree/nvim-tree.lua',
-    cmd = { 'NvimTreeToggle', 'NvimTreeOpen' },
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require('nvim-tree').setup()
-    end,
+    'nvim-neo-tree/neo-tree.nvim',
+    cmd = { 'Neotree' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+    },
   },
-
   {
     -- LSP
     'neovim/nvim-lspconfig',

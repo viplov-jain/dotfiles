@@ -12,7 +12,7 @@ M.global_maps = {
   -- Format on paste
   { 'p', 'p==', desc = 'Paste' },
 
-  { '<leader>n', '<Cmd>NvimTreeToggle<CR>', desc = 'Nvim Tree toggle', mode = nv },
+  { '<leader>n', '<Cmd>Neotree toggle<CR>', desc = 'Neo Tree toggle', mode = nv },
 
   -- Alt key
   -- Move lines
