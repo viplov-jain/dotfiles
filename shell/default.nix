@@ -25,7 +25,7 @@
 
   home.file = {
     ".config/starship.toml".source = ./starship.toml;
-    ".config/kitty/kitty.conf".source = ./kitty.conf;
+    ".config/ghostty/config".source = ./ghostty.conf;
     ".config/fish".source =
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/shell/fish";
     ".config/bat".source =
