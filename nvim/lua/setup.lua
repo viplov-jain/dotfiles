@@ -10,8 +10,3 @@ require('telescope').load_extension 'fzf'
 
 -- Setup key maps
 require('which-key').add(require('remaps').global_maps)
-
--- Code action lightbulb
-require('nvim-lightbulb').setup {
-  autocmd = { enabled = true },
-}

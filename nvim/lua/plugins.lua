@@ -110,8 +110,6 @@ return {
     end,
   },
   'folke/which-key.nvim',
-  'kosayoda/nvim-lightbulb',
   'tpope/vim-surround',
   'wellle/targets.vim',
-  'folke/zen-mode.nvim',
 }
