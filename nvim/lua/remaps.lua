@@ -41,6 +41,7 @@ M.global_maps = {
 
   -- Search
   { '<leader>ff', telescope.find_files, desc = '[F]ind [f]ile' },
+  { '<leader>ff', '<cmd>lua require("spectre").toggle()<CR>', desc = '[F]ind and [r]eplace' },
   { '<leader>fg', telescope.live_grep, desc = '[F]ind [g]rep' },
   { '<leader>fb', telescope.buffers, desc = '[F]ind [b]uffers' },
   { '<leader>fh', telescope.help_tags, desc = '[F]ind [h]elp' },
@@ -76,23 +77,11 @@ M.global_maps = {
     mode = 'v',
   },
   { '<leader>hR', gitsigns.reset_buffer, desc = '[R]eset buffer' },
-  { '<leader>hp', gitsigns.preview_hunk, desc = '[P]review' },
-  {
-    '<leader>hb',
-    function()
-      gitsigns.blame_line { full = true }
-    end,
-    desc = '[B]lame',
-  },
-  { '<leader>hd', gitsigns.diffthis, desc = '[D]iff' },
-  {
-    '<leader>hD',
-    function()
-      gitsigns.diffthis '~'
-    end,
-    desc = '[D]iff ~',
-  },
-  { '<leader>bb', gitsigns.blame, desc = 'Git [B]lame' },
+  { '<leader>hp', gitsigns.preview_hunk_inline, desc = '[P]review' },
+  { '<leader>hb', '<CMD>GitBlameOpenFileURL<CR>', desc = 'Goto [B]lame' },
+  { '<leader>hB', gitsigns.blame, desc = 'Sidepanel [B]lame' },
+  { '<leader>hd', '<CMD>DiffviewOpen origin/main...HEAD<CR>', desc = '[D]iff' },
+  { '<leader>hh', '<CMD>DiffviewFileHistory', desc = 'File [H]istory' },
 
   -- Text object
   { 'ih', ':<C-U>Gitsigns select_hunk<CR>', desc = '[H]unk text object', mode = { 'o', 'x' } },

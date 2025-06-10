@@ -27,6 +27,7 @@
     rofi-wayland
     wl-clipboard
 
+    transmission_4-qt
     # GUI
     waybar
 

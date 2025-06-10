@@ -16,6 +16,7 @@ M.integrations = {
   nvimtree = true,
   lsp_trouble = true,
   which_key = true,
+  gitsigns = true,
 }
 
 return M

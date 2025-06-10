@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    nodejs_23
+    nodejs_24
     bun
     vscode-langservers-extracted
     nodePackages.prettier

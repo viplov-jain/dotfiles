@@ -2,12 +2,13 @@
 {
   imports = [
     ../lang/c.nix
-    ../lang/rust.nix
-    ../lang/python.nix
+    ../lang/config_files.nix
+    ../lang/go.nix
     ../lang/lua.nix
     ../lang/nix.nix
+    ../lang/python.nix
+    ../lang/rust.nix
     ../lang/typescript.nix
-    ../lang/config_files.nix
 
     ../shell
     ../git

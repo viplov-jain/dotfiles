@@ -101,7 +101,8 @@ return {
       require 'opts.treesitter'
     end,
   },
-  { 'lewis6991/gitsigns.nvim', event = 'VeryLazy', opts = { current_line_blame = true } },
+  { 'lewis6991/gitsigns.nvim', event = 'VeryLazy', opts = {} },
+  { 'f-person/git-blame.nvim', event = 'VeryLazy', opts = { date_format = '%r' } },
   { 'stevearc/oil.nvim', cmd = 'Oil', opts = {} },
   {
     'NvChad/nvim-colorizer.lua',
@@ -110,6 +111,7 @@ return {
     end,
   },
   'folke/which-key.nvim',
+  'nvim-pack/nvim-spectre',
   'tpope/vim-surround',
   'wellle/targets.vim',
 }
