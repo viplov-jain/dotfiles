@@ -41,7 +41,7 @@ M.global_maps = {
 
   -- Search
   { '<leader>ff', telescope.find_files, desc = '[F]ind [f]ile' },
-  { '<leader>ff', '<cmd>lua require("spectre").toggle()<CR>', desc = '[F]ind and [r]eplace' },
+  { '<leader>fr', '<cmd>lua require("spectre").toggle()<CR>', desc = '[F]ind and [r]eplace' },
   { '<leader>fg', telescope.live_grep, desc = '[F]ind [g]rep' },
   { '<leader>fb', telescope.buffers, desc = '[F]ind [b]uffers' },
   { '<leader>fh', telescope.help_tags, desc = '[F]ind [h]elp' },
