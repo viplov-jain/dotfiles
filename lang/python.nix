@@ -7,6 +7,7 @@
         pip
         requests
         mypy
+        debugpy
       ]
     ))
 

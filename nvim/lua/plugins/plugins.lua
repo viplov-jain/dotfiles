@@ -1,10 +1,6 @@
--- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
---
--- In your plugin files, you can:
--- * add extra plugins
--- * disable/enabled LazyVim plugins
--- * override the configuration of LazyVim plugins
 return {
+  { import = "lazyvim.plugins.extras.editor.neo-tree" },
+
   { import = "lazyvim.plugins.extras.lang.python" },
   { import = "lazyvim.plugins.extras.lang.typescript" },
   { import = "lazyvim.plugins.extras.lang.docker" },
@@ -16,8 +12,10 @@ return {
   { import = "lazyvim.plugins.extras.lang.nix" },
   { import = "lazyvim.plugins.extras.lang.toml" },
 
-  { import = "lazyvim.plugins.extras.editor.neo-tree" },
+  { import = "lazyvim.plugins.extras.dap.core" },
+  { import = "lazyvim.plugins.extras.test.core" },
 
   { "williamboman/mason.nvim", enabled = false },
   { "williamboman/mason-lspconfig.nvim", enabled = false },
+  { "jay-babu/mason-nvim-dap.nvim", enabled = false },
 }
