@@ -16,16 +16,16 @@ return {
   { import = "lazyvim.plugins.extras.lang.nix" },
   { import = "lazyvim.plugins.extras.lang.toml" },
 
+  { import = "lazyvim.plugins.extras.editor.neo-tree" },
+
   { "williamboman/mason.nvim", enabled = false },
   { "williamboman/mason-lspconfig.nvim", enabled = false },
   {
     "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
     opts = {
-      ---@type lspconfig.options
       servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        ts_ls = {},
       },
     },
   },
