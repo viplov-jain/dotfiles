@@ -4,6 +4,7 @@
     ./common.nix
     ../dunst
     ../eww
+    ../dropbox
   ];
 
   home.packages = with pkgs; [
