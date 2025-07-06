@@ -32,7 +32,7 @@
     waybar
 
     # Browsers
-    firefox-unwrapped
+    firefox
     librewolf
     ungoogled-chromium
     brave
