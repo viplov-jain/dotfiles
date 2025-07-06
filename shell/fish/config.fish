@@ -9,5 +9,5 @@ if status is-interactive
     if test -e /nix/var/nix/profiles/default/bin
         export PATH="$PATH:/nix/var/nix/profiles/default/bin"
     end
-    export PATH="$PATH:$HOME/.local/bin"
+    export PATH="$HOME/.local/bin:$HOME/.bun/bin:$PATH"
 end

@@ -39,6 +39,5 @@
     # Media
     youtube-music
 
-    docker_27
   ];
 }
