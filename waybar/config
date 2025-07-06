@@ -17,6 +17,7 @@
     "modules-right": [
         "bluetooth",
         "pulseaudio",
+        "battery",
         "clock",
         "temperature",
         "cpu"
@@ -112,6 +113,31 @@
             "on-scroll-up": "shift_up",
             "on-scroll-down": "shift_down"
         }
+    },    
+    "battery": {
+        "states": {
+            "good": 90,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-plugged": "",
+        "format-full": "",
+        "format-time": "{H}h {M}m",
+        "weighted-average": true,
+        "format-icons": [
+            "󱃍",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
