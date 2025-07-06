@@ -4,7 +4,6 @@
     ./common.nix
     ../dunst
     ../eww
-    ../dropbox
   ];
 
   home.packages = with pkgs; [
@@ -33,7 +32,7 @@
     waybar
 
     # Browsers
-    firefox
+    firefox-unwrapped
     librewolf
     ungoogled-chromium
     brave
