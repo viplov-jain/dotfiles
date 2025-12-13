@@ -24,7 +24,7 @@
     hyprpaper
     hyprlock
     hypridle
-    rofi-wayland
+    rofi
     wl-clipboard
 
     transmission_4-qt

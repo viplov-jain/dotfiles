@@ -25,3 +25,5 @@
   diffFilter = delta --color-only --features=interactive
 [push]
   autoSetupRemote = true
+[maintenance]
+	repo = /home/viplov/Downloads/private
