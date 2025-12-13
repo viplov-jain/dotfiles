@@ -7,7 +7,6 @@
     yamllint
 
     # JSON
-    nodePackages.jsonlint
     gron
 
     # Markdown

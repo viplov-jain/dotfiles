@@ -13,9 +13,11 @@
 
   home.packages = with pkgs; [
     (terraform.withPlugins (plugin: [ plugin.aws ]))
+    tflint
     postgresql_16
     mongosh
     redis
     circleci-cli
+    pnpm
   ];
 }
