@@ -8,6 +8,9 @@
         requests
         mypy
         debugpy
+        sympy
+        numpy
+        scipy
       ]
     ))
 

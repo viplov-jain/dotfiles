@@ -7,7 +7,9 @@
   ];
 
   home.packages = with pkgs; [
-    qemu
+    vscodium
+    libllvm
+    perf
 
     # Utils
     xdg-utils
