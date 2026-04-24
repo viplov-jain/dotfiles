@@ -2,8 +2,6 @@
 {
   imports = [
     ./common.nix
-    ../dunst
-    ../eww
   ];
 
   home.packages = with pkgs; [
@@ -22,31 +20,16 @@
     nautilus
     kdePackages.dolphin
 
-    # Hyprland
-    hyprpaper
-    hyprlock
-    hypridle
-    rofi
-    wl-clipboard
-
     transmission_4-qt
-    # GUI
-    waybar
-
     # Browsers
-    firefox
-    librewolf
     ungoogled-chromium
     brave
 
     vlc
     geeqie
 
-    ghostty
   ];
 
   home.file = {
-    ".config/hypr".source = ../hypr;
-    ".config/waybar".source = ../waybar;
   };
 }

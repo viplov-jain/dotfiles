@@ -6,7 +6,7 @@
   ];
   home.packages = with pkgs; [
     shfmt
-    nodePackages.bash-language-server
+    bash-language-server
 
     fish
 
@@ -27,8 +27,8 @@
     ".config/starship.toml".source = ./starship.toml;
     ".config/ghostty/config".source = ./ghostty.conf;
     ".config/fish".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/shell/fish";
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/github/dotfiles/shell/fish";
     ".config/bat".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/shell/bat";
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/github/dotfiles/shell/bat";
   };
 }

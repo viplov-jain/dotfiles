@@ -36,8 +36,5 @@
     curl
     jq
 
-    # Media
-    youtube-music
-
   ];
 }

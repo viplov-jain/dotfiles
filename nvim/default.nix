@@ -6,6 +6,7 @@
   ];
   home.file = {
     ".vimrc".source = ./settings.vim;
-    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
+    ".config/nvim".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/github/dotfiles/nvim";
   };
 }
