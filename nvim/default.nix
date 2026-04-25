@@ -12,7 +12,7 @@
       plenary-nvim
     ];
 
-    initLua = builtins.readFile ./init.lua;
+    initLua = builtins.readFile ./nvim-init.lua;
     withRuby = true;
     withPython3 = false;
   };
