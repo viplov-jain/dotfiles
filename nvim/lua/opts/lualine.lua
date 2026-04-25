@@ -13,12 +13,13 @@ local function lsp_status()
   end
   return ' LSP: ' .. table.concat(attached_lsps, ', ')
 end
-return {
+
+require('lualine').setup {
   options = {
     component_separators = '',
     section_separators = '',
     globalstatus = true,
-    theme = 'catppuccin',
+    theme = 'catppuccin-nvim',
   },
   sections = {
     lualine_a = { 'mode' },

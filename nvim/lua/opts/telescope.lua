@@ -1,4 +1,4 @@
-return {
+require('telescope').setup {
   defaults = {
     vimgrep_arguments = {
       'rg',
@@ -17,3 +17,4 @@ return {
     },
   },
 }
+require('telescope').load_extension 'fzf'
