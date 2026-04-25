@@ -1,4 +1,7 @@
 if status is-interactive
+    if test -e ~/.nix-profile/etc/profile.d/nix.fish 
+        source ~/.nix-profile/etc/profile.d/nix.fish 
+    end
     starship init fish | source
     zoxide init fish --cmd cd | source
     alias cat="bat"
