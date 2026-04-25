@@ -52,3 +52,6 @@ cmp.setup.cmdline(':', {
 })
 -- bracket completion for lua
 cmp.event:on('confirm_done', cmp_ap.on_confirm_done())
+
+-- friendly-snippets
+require('luasnip.loaders.from_vscode').lazy_load()

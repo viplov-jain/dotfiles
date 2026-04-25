@@ -2,11 +2,20 @@
 {
   home.packages = with pkgs; [
     vim
-    neovim-unwrapped
+    tree-sitter
   ];
+
+  programs.neovim = {
+    enable = true;
+    plugins = with pkgs.vimPlugins; [
+      telescope-fzf-native-nvim # Nix handles the 'make' step during installation
+      telescope-nvim
+      plenary-nvim
+    ];
+
+    initLua = builtins.readFile ./init.lua;
+  };
   home.file = {
     ".vimrc".source = ./settings.vim;
-    ".config/nvim".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/github/dotfiles/nvim";
   };
 }

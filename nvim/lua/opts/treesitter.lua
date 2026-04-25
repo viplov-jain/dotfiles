@@ -1,4 +1,4 @@
-local ensure_installed = {
+local ensureInstalled = {
   'query',
   --'c',
   --'cpp',
@@ -52,11 +52,11 @@ local ensure_installed = {
   'gitignore',
 }
 
-require('nvim-treesitter.configs').setup {
-  ensure_installed = ensure_installed,
-  sync_install = false,
-  auto_install = false,
-  highlight = {
-    enable = true,
-  },
-}
+local alreadyInstalled = require('nvim-treesitter.config').get_installed()
+local parsersToInstall = vim
+  .iter(ensureInstalled)
+  :filter(function(parser)
+    return not vim.tbl_contains(alreadyInstalled, parser)
+  end)
+  :totable()
+require('nvim-treesitter').install(parsersToInstall)

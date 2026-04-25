@@ -1,111 +1,89 @@
-return {
-  {
-    -- Theme
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
-    config = function()
-      require('catppuccin').setup(require 'opts.theme')
-      vim.cmd.colorscheme 'catppuccin-mocha'
-    end,
-  },
-  {
-    -- Formatter
-    'stevearc/conform.nvim',
-    event = 'BufWritePre',
-    cmd = 'ConformInfo',
-    opts = require 'opts.formatter',
-  },
-  {
-    -- Autocomplete
-    'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',
-    dependencies = {
-      'hrsh7th/cmp-nvim-lsp',
-      'L3MON4D3/LuaSnip',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-buffer',
-    },
-    config = function()
-      require 'opts.cmp'
-    end,
-  },
-  {
-    -- Auto pairs () {} ...
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    opts = {},
-  },
-  {
-    -- Bufferline
-    'akinsho/bufferline.nvim',
-    event = 'VeryLazy',
-    dependencies = 'nvim-tree/nvim-web-devicons',
-  },
-  {
-    -- Statusline
-    'nvim-lualine/lualine.nvim',
-    event = 'VeryLazy',
-    opts = require 'opts.lualine',
-  },
-  {
-    -- Search
-    'nvim-telescope/telescope.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-      'nvim-tree/nvim-web-devicons',
-    },
-    opts = require 'opts.telescope',
-  },
-  {
-    -- File tree
-    'nvim-neo-tree/neo-tree.nvim',
-    cmd = { 'Neotree' },
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-    },
-  },
-  {
-    -- LSP
-    'neovim/nvim-lspconfig',
-    event = { 'BufReadPre', 'BufNewFile' },
-    dependencies = {
-      { 'j-hui/fidget.nvim', opts = {} },
-    },
-    config = function()
-      require 'lsp.lspattach'
-      require 'lsp.lspconfig'
-    end,
-  },
-  {
-    'mfussenegger/nvim-lint',
-    config = function()
-      require 'lsp.lint'
-    end,
-  },
-  {
-    -- Treesitter
-    'nvim-treesitter/nvim-treesitter',
-    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
-    build = ':TSUpdate',
-    config = function()
-      require 'opts.treesitter'
-    end,
-  },
-  { 'lewis6991/gitsigns.nvim', event = 'VeryLazy', opts = {} },
-  { 'f-person/git-blame.nvim', event = 'VeryLazy', opts = { date_format = '%r' } },
-  { 'stevearc/oil.nvim', cmd = 'Oil', opts = {} },
-  {
-    'NvChad/nvim-colorizer.lua',
-    config = function()
-      require 'opts.colorizer'
-    end,
-  },
+local function add(spec)
+  local function parse(s)
+    -- If it's a shorthand (no http/git prefix and contains a slash), expand it
+    if type(s) == 'string' and not s:find '^%w+://' and s:find '/' then
+      return 'https://github.com/' .. s
+    end
+    return s
+  end
+
+  if type(spec) == 'table' then
+    for i, v in ipairs(spec) do
+      if type(v) == 'string' then
+        spec[i] = parse(v)
+      elseif type(v) == 'table' and v.src then
+        v.src = parse(v.src)
+      end
+    end
+  else
+    spec = parse(spec)
+  end
+
+  vim.pack.add(spec)
+end
+
+add {
+  { src = 'catppuccin/nvim', name = 'catppuccin' },
+
+  -- Dependencies
+  'nvim-tree/nvim-web-devicons',
+  'nvim-lua/plenary.nvim',
+  'j-hui/fidget.nvim',
+
+  'nvim-treesitter/nvim-treesitter',
+  'neovim/nvim-lspconfig',
+  'mfussenegger/nvim-lint',
+  'stevearc/conform.nvim',
+
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-nvim-lsp',
+  'L3MON4D3/LuaSnip',
+  'hrsh7th/cmp-cmdline',
+  'hrsh7th/cmp-buffer',
+  'rafamadriz/friendly-snippets',
+  'windwp/nvim-autopairs',
+
+  'akinsho/bufferline.nvim',
+
+  'nvim-lualine/lualine.nvim',
+
+  { src = 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  'nvim-telescope/telescope.nvim',
+
+  'MunifTanjim/nui.nvim',
+  'nvim-neo-tree/neo-tree.nvim',
+
+  'lewis6991/gitsigns.nvim',
+  'f-person/git-blame.nvim',
+  'stevearc/oil.nvim',
+  'NvChad/nvim-colorizer.lua',
   'folke/which-key.nvim',
   'nvim-pack/nvim-spectre',
   'tpope/vim-surround',
   'wellle/targets.vim',
 }
+
+require('catppuccin').setup(require 'opts.theme')
+vim.cmd.colorscheme 'catppuccin-mocha'
+
+require 'opts.treesitter'
+require 'lsp.lspattach'
+require 'lsp.lspconfig'
+require 'lsp.lint'
+require('conform').setup(require 'opts.formatter')
+
+require 'opts.cmp'
+require 'opts.lualine'
+
+require 'opts.telescope'
+require 'opts.colorizer'
+-- Highlight yanked text for 150ms
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
+-- Setup key maps
+require('which-key').add(require('remaps').global_maps)
+require('telescope').load_extension 'fzf'
