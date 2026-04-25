@@ -8,8 +8,6 @@
     enable = true;
     plugins = with pkgs.vimPlugins; [
       telescope-fzf-native-nvim
-      telescope-nvim
-      plenary-nvim
     ];
 
     initLua = builtins.readFile ./nvim-init.lua;
