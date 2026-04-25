@@ -1,28 +1,4 @@
-local function add(spec)
-  local function parse(s)
-    -- If it's a shorthand (no http/git prefix and contains a slash), expand it
-    if type(s) == 'string' and not s:find '^%w+://' and s:find '/' then
-      return 'https://github.com/' .. s
-    end
-    return s
-  end
-
-  if type(spec) == 'table' then
-    for i, v in ipairs(spec) do
-      if type(v) == 'string' then
-        spec[i] = parse(v)
-      elseif type(v) == 'table' and v.src then
-        v.src = parse(v.src)
-      end
-    end
-  else
-    spec = parse(spec)
-  end
-
-  vim.pack.add(spec)
-end
-
-add {
+local packages = {
   { src = 'catppuccin/nvim', name = 'catppuccin' },
 
   -- Dependencies
@@ -61,3 +37,29 @@ add {
   'tpope/vim-surround',
   'wellle/targets.vim',
 }
+
+local function add(spec)
+  local function parse(s)
+    -- If it's a shorthand (no http/git prefix and contains a slash), expand it
+    if type(s) == 'string' and not s:find '^%w+://' and s:find '/' then
+      return 'https://github.com/' .. s
+    end
+    return s
+  end
+
+  if type(spec) == 'table' then
+    for i, v in ipairs(spec) do
+      if type(v) == 'string' then
+        spec[i] = parse(v)
+      elseif type(v) == 'table' and v.src then
+        v.src = parse(v.src)
+      end
+    end
+  else
+    spec = parse(spec)
+  end
+
+  vim.pack.add(spec)
+end
+
+add(packages)
